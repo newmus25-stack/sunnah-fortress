@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حصن السنة - المنصة العلمية لرد الشبهات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&family=Scheherazade+New:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <span>منصة حصن السنة العلمية - إشراف الأستاذ: رؤوف صاولة</span>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header (Alukah Exact Layout) -->
+    <header class="main-header">
+        <div class="container header-grid">
+            <div class="logo-area">
+                <img src="logo.png" alt="حصن السنة" class="logo-placeholder">
+                <div class="site-titles">
+                    <h1 class="site-logo">حصن السنة</h1>
+                    <p>الردود العلمية على شبهات المستشرقين والحدثيين،</p>
+                </div>
+            </div>
+            <div class="header-action">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث في الشبهات والردود...">
+                    <button id="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">الرئيسية</a></li>
+                <li><a href="#" onclick="showPage('concepts'); return false;">مفاهيم وتعريفات</a></li>
+                <li><a href="#axes">محاور الشبهات</a></li>
+                <li><a href="#doubts">أبرز الردود</a></li>
+                <li><a href="#library">المكتبة</a></li>
+                <li><a href="#bahith">أدوات البحث</a></li>
+                <li><a href="#offer" class="special-link">احصل على الهدية</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Shopify Style Landing) -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge">إصدار تجريبي</span>
+                <h2>ذبّاً عن حياض السنة النبوية.. بالعلم والبرهان</h2>
+                <p>نضع بين يديك أهم الردود المنهجية الإجمالية على شبهات المستشرقين والحداثيين، بأسلوب علمي هادئ وموثق. مكتبة متكاملة تجمع بين الدراسات التحليلية والمصادر التراثية المعتمدة.</p>
+                <div class="hero-btns">
+                    <a href="#doubts" class="btn btn-primary">تصفح الردود الآن</a>
+                    <a href="#axes" class="btn btn-secondary">تحميل الحقيبة العلمية</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-box">
+                    <img src="hero.png" alt="حصن السنة - صورة تعبيرية">
+                </div>
+            </div>
+        </div>
+</section>
+
+    <!-- Concepts Page (Hidden) -->
+    <div id="concepts-page" style="display: none;">
+        <div class="back-btn" onclick="showPage('home')">
+            <i class="fas fa-arrow-right"></i> العودة للرئيسية
+        </div>
+        <section id="concepts" class="concepts-section">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                    <h2 class="title-border" style="display: inline-block;">مفاهيم وتعريفات</h2>
+                </div>
+                <div class="concepts-grid">
+<!-- مفهوم السنة -->
+                <div class="concept-card full-height collapsed" onclick="toggleCard(this)">
+                    <div class="concept-icon" style="background: linear-gradient(135deg, #08731f, #055015);">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>مفهوم السنة</h3>
+                    
+                    <p class="preview-text">الطريقة الحسنة كانت أم ذميمة، سنة الرجل: طريقته... <span class="expand-indicator">... اقرأ المزيد</span></p>
+                    
+                    <div class="full-content">
+                    <div class="concept-section">
+                        <h4><i class="fas fa-language"></i> السنة لغة</h4>
+                        <p>الطريقة الحسنة كانت أم ذميمة، سنة الرجل: طريقته، والجمع سنن. وكل من ابتدأ شيئا ثم عمل به غيره من بعده فهو الذي سنه. وأصل الكلمة من السن وهو جريان الشيء في سهولة، يقال: سننت الماء على وجهي أسنه سنا إذا أجريته. ومن معانيها أيضاً: العادة والسيرة.</p>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-book"></i> السنة اصطلاحا</h4>
+                        <p>ما أضيف إلى النبي محمد ﷺ من قول، أو فعل، أو تقرير، أو صفة خلقية، أو خلقية. وهي مرادفة لمصطلح "الحديث" بالمعنى الخاص.</p>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-pen-nib"></i> أقوال العلماء</h4>
+                        <blockquote>قال الحافظ ابن حجر: "الحديث ما جاء عن النبي ﷺ والخبر ما جاء عن غيره"</blockquote>
+                        <blockquote>قال المعلمي اليماني: "تطلق السنة لغة وشرعا على وجهين: الأول الأمر يبتدئه الرجل فيتبعه فيه غيره، والثاني السيرة العامة التي تقابل الكتاب وتسمى الهدي"</blockquote>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-balance-scale"></i> تعريفات أخرى</h4>
+                        <ul>
+                            <li><strong>عند الأصوليين:</strong> ما صدر عن النبي ﷺ مما يصلح دليلا لحكم شرعي</li>
+                            <li><strong>عند الفقهاء:</strong> المندوب والمستحب (أحد الأحكام التكليفية الخمسة)</li>
+                            <li><strong>عند أهل العقائد:</strong> العقيدة الصحيحة التي وردت في القرآن والسنة</li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-plus-circle"></i> اضغط للقراءة</div>
+                </div>
+                                    
+                <!-- مفهوم الحديث -->
+                <div class="concept-card full-height collapsed" onclick="toggleCard(this)">
+                    <div class="concept-icon" style="background: linear-gradient(135deg, #c5a059, #b08d4a);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>مفهوم الحديث</h3>
+                    
+                    <p class="preview-text">الجديد، ضدُّ القديم. يرجع معناه للحُدوث... <span class="expand-indicator">... اقرأ المزيد</span></p>
+                    
+                    <div class="full-content">
+                    <div class="concept-section">
+                        <h4><i class="fas fa-language"></i> الحديث لغة</h4>
+                        <p>الجديد، ضدُّ القديم. يرجع معناه للحُدوث، وهو ما يطرأ بعد العدم. قال ابن فارس: "الحاء والدال والثاء أصل واحد، وهو كون الشيء لم يكن، يُقال: حدث أمر بعد أن لم يكن"</p>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-book"></i> الحديث اصطلاحا</h4>
+                        <p>ما يُنسَب للرسول � من قوله، وفعله، وتقريره، وصفاته وأحواله. وبعضهم يضيف ما يروى عن الصحابي والتابعي.</p>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-history"></i> تطور المصطلح</h4>
+                        <blockquote>قال أبو زرعة الرازي: "كان أحمد بن حنبل يحفظ ألف ألف حديث"</blockquote>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-tags"></i> إطلاقات الحديث</h4>
+                        <ul>
+                            <li><strong>مضافا لمخرجه:</strong> حديث الزهري</li>
+                            <li><strong>مضافا للطرق:</strong> حديث مالك</li>
+                            <li><strong>مضافا لقصة:</strong> حديث النية، حديث المعراج</li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-plus-circle"></i> اضغط للقراءة</div>
+                </div>
+                        
+<!-- مفهوم الشبهات -->
+                <div class="concept-card full-height collapsed" onclick="toggleCard(this)">
+                    <div class="concept-icon" style="background: linear-gradient(135deg, #dc2626, #b91c1c);">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>مفهوم الشبهات</h3>
+                    
+                    <p class="preview-text">الشبهات جمع شبهة، وهي الشك والريبة في صحة السنة النبوية... <span class="expand-indicator">... اقرأ المزيد</span></p>
+                    
+                    <div class="full-content">
+                    <div class="concept-section">
+                        <h4><i class="fas fa-info-circle"></i> التعريف</h4>
+                        <p>الشبهات جمع شبهة، وهي الشك والريبة في صحة السنة النبوية ومصداقيتها. وهي طعون يقدمها المشككون بأسانيد واهية وأدلة مزعومة.</p>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-list"></i> أنواع الشبهات</h4>
+                        <ul>
+                            <li><strong>شبهات التاريخ:</strong> حول تدوين الحديث وتاريخه</li>
+                            <li><strong>شبهات الرواية:</strong> حول عدالة الرواة والصحابة</li>
+                            <li><strong>شبهات المنهج:</strong> حول طريقة المحدثين في النقد</li>
+                            <li><strong>شبهات الاستشراق:</strong> من المستشرقين والعلمانيين</li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-plus-circle"></i> اضغط للقراءة</div>
+                </div>
+                
+                <!-- مفهوم الردود -->
+                <div class="concept-card full-height collapsed" onclick="toggleCard(this)">
+                    <div class="concept-icon" style="background: linear-gradient(135deg, #16a34a, #15803d);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>مفهوم الردود</h3>
+                    
+                    <p class="preview-text">الإجابات العلمية الموثقة على الشبهات المثارة... <span class="expand-indicator">... اقرأ المزيد</span></p>
+                    
+                    <div class="full-content">
+                    <div class="concept-section">
+                        <h4><i class="fas fa-reply"></i> التعريف</h4>
+                        <p>الإجابات العلمية الموثقة على الشبهات المثارة حول السنة النبوية، بأسلوب علمي هادئ وموثق بالمصادر.</p>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-list-alt"></i> أنواع الردود</h4>
+                        <ul>
+                            <li><strong>الرد التاريخي:</strong> بتصحيح التواريخ والحقائق</li>
+                            <li><strong>الرد التحليلي:</strong> ببيان المغالطات المنطقية</li>
+                            <li><strong>الرد المقارن:</strong> بمقارنة الروايات المختلفة</li>
+                            <li><strong>الرد الأصولي:</strong> بأصول العلم ومراجعه المعتمدة</li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-plus-circle"></i> اضغط للقراءة</div>
+                </div>
+                
+                
+                <!-- مفهوم الاستشراق والحداثة -->
+                <div class="concept-card full-height collapsed" onclick="toggleCard(this)">
+                    <div class="concept-icon" style="background: linear-gradient(135deg, #ea580c, #c2410c);">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>مفهوم الاستشراق والحداثة</h3>
+                    
+                    <p class="preview-text">الاستشراق تعبير يدل على الاتجاه نحو الشرق... <span class="expand-indicator">... اقرأ المزيد</span></p>
+                    
+                    <div class="full-content">
+                    <div class="concept-section">
+                        <h4><i class="fas fa-globe"></i> الاستشراق</h4>
+                        <p>الاستشراق Orientalism تعبير يدل على الاتجاه نحو الشرق، ويطلق على كل من يبحث في أمور الشرقيين وثقافتهم وتاريخهم. ويقصد به ذلك التيار الفكري الذي يتمثل في إجراء الدراسات المختلفة عن الشرق الإسلامي، والتي تشمل حضارته وأديانه وآدابه ولغاته وثقافته. ولقد أسهم هذا التيار في صياغة التصورات الغربية عن الشرق عامة وعن العالم الإسلامي بصورة خاصة.</p>
+                    </div>
+                    
+                    <div class="concept-section">
+                        <h4><i class="fas fa-rocket"></i> الحداثة</h4>
+                        <p>الحداثة مذهب فكري أدبي علماني، بني على أفكار وعقائد غربية خالصة مثل الماركسية والوجودية والفرويدية والداروينية، وأفاد من المذاهب الفلسفية والأدبية التي سبقته مثل السريالية والرمزية.</p>
+                    </div>
+                    </div>
+                    <div class="expand-hint"><i class="fas fa-plus-circle"></i> اضغط للقراءة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- End Concepts Page -->
+
+<!-- Main Content Area -->
+    <section class="main-layout container">
+        <div class="content-grid">
+            
+            <!-- Left Column: Main Content -->
+            <div class="main-col">
+                
+                <!-- Axes Section -->
+                <div id="axes" class="section-block">
+                    <div class="section-header">
+                        <h2 class="title-border">محاور الشبهات والردّ عليها</h2>
+                    </div>
+                    <div class="axes-grid" id="categories-container">
+                        <!-- Categories will be injected -->
+                    </div>
+                </div>
+
+                <!-- Latest Doubts Section -->
+                <div id="doubts" class="section-block">
+                    <div class="section-header flex-between">
+                        <h2 class="title-border">أحدث الردود الموثقة</h2>
+                        <a href="#axes" class="view-all">تصفح المحاور</a>
+                    </div>
+                    <div class="doubts-list" id="doubts-container">
+                        <!-- Doubts will be injected -->
+                    </div>
+                </div>
+
+                <!-- Full Library Section -->
+                <div id="library" class="section-block">
+                    <div class="section-header">
+                        <h2 class="title-border">المكتبة العلمية والمرئيات</h2>
+                    </div>
+                    <div class="lib-grid" id="full-library-container">
+                        <!-- Full library items will be injected here -->
+                    </div>
+                </div>
+
+                <!-- Scholarly Tools Section -->
+                <div id="bahith" class="section-block">
+                    <div class="section-header">
+                        <h3 class="title-border">أدوات البحث العلمي المتخصصة</h3>
+                    </div>
+                    <div class="tools-grid">
+                        <!-- Tool 1: Quran Encyclopedia -->
+                        <div class="bahith-card">
+                            <div class="tool-icon" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">
+                                <i class="fas fa-quran"></i>
+                            </div>
+                            <h3>الموسوعة القرآنية الشاملة</h3>
+                            <p>مصحف تفاعلي برواية ورش عن نافع مع الاستماع للقراء ومزايا متعددة.</p>
+                            <a href="https://quranpedia.net/mushaf/4" target="_blank" class="btn btn-primary">دخول المنصة</a>
+                        </div>
+                        
+                        <!-- Tool 2: Hadith Platform -->
+                        <div class="bahith-card">
+                            <div class="tool-icon" style="background: linear-gradient(135deg, #059669, #047857);">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3>المنصة الحديثية الذكية</h3>
+                            <p>محرك بحث متخصص في تخريج الأحاديث والحكم عليها بدقة عالية.</p>
+                            <a href="https://alminasa.ai/" target="_blank" class="btn btn-gold">دخول المنصة</a>
+                        </div>
+                        
+                        <!-- Tool 3: Islamic Content -->
+                        <div class="bahith-card">
+                            <div class="tool-icon" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);">
+                                <i class="fas fa-books"></i>
+                            </div>
+                            <h3>منصة الجمهرة</h3>
+                            <p>معلمة مفردات المحتوى الإسلامي ومكتبة متكاملة.</p>
+                            <a href="https://islamic-content.com/" target="_blank" class="btn btn-primary">دخول المنصة</a>
+                        </div>
+
+                        <!-- Tool 4: Aljam3 -->
+                        <div class="bahith-card">
+                            <div class="tool-icon" style="background: linear-gradient(135deg, #ea580c, #c2410c);">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>جامع الكتب</h3>
+                            <p>ثلاث مكتبات متكاملة وأكثر من 63 ألف كتاب.</p>
+                            <a href="https://aljam3.com/ar" target="_blank" class="btn btn-gold">دخول الجامع</a>
+                        </div>
+
+                        <!-- Tool 5: Bahith app -->
+                        <div class="bahith-card">
+                            <div class="tool-icon" style="background: linear-gradient(135deg, #b45309, #92400e);">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                            <h3>الباحث العلمي</h3>
+                            <p>محرك بحث شامل في الكتب والدروس والمخطوطات مع روابط مباشرة.</p>
+                            <a href="https://bahith.app/" target="_blank" class="btn btn-primary">دخول الباحث</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar">
+                <!-- Offer Block -->
+                <div id="offer" class="offer-card">
+                    <h3>🎁 هدية المنصة</h3>
+                    <div class="offer-content">
+                        <i class="fas fa-book-open"></i>
+                        <h4>الثلاثينية في كشف شبهات المشككين في السنة النبوية</h4>
+                        <p>كتاب PDF يجمع 30 جوابا من خلال عقد موازنة بين حفظ القرآن وحفظ السنة جاهز للطباعة.</p>
+                        <a href="https://turath.io/book/71679" target="_blank" class="btn btn-gold btn-block">تحميل مجاني مباشر <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+
+                <!-- Library Preview -->
+                <div class="sidebar-block">
+                    <h3 class="side-title">المكتبة المختارة</h3>
+                    <div class="side-list" id="library-preview">
+                        <!-- Library items injected -->
+                    </div>
+                </div>
+
+                <!-- Supervisor -->
+                <div class="sidebar-block supervisor-side">
+                    <h3 class="side-title">إشراف</h3>
+                    <div class="supervisor-info">
+                        <img src="supervisor.jpg" alt="رؤوف صاولة">
+                        <div class="text">
+                            <strong>الأستاذ: رؤوف صاولة</strong>
+                            <span>أستاذ الحديث وعلومه بجامعة الأمير عبد القادر للعلوم الإسلامية</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>حصن السنة</h3>
+                <p>منصة علمية تهدف إلى الدفاع عن السنة النبوية والرد على الطعون بأسلوب مختصر، وتوجيه القارئ للمراجع المعتمدة للوقوف على التفصيل.</p>
+            </div>
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#">عن المنصة</a></li>
+                    <li><a href="#">سياسة المحتوى</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>اشترك في النشرة العلمية</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="بريدك الإلكتروني">
+                    <button type="submit">اشترك</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            جميع الحقوق محفوظة لمنصة حصن السنة &copy; 2026
+        </div>
+    </footer>
+
+    <!-- Modal for Doubt Details (Shopify/Modern Style) -->
+    <div id="doubt-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
