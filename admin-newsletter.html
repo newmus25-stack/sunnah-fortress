@@ -104,21 +104,12 @@
 
 <script src="newsletter-config.js"></script>
     <script>
-        // كلمة المرور
-        const ADMIN_PASSWORD = "turath2026";
+        // وصول سري عبر الرابط المباشر فقط
+        const params = new URLSearchParams(window.location.search);
+        const secretKey = params.get('admin');
         
-        function checkPassword() {
-            const password = prompt("أدخل كلمة المرور:");
-            if (password !== ADMIN_PASSWORD) {
-                alert("❌ كلمة مرور صحيحة");
-                document.body.innerHTML = '<div style="padding:50px;text-align:center;color:red;">غير مصرح لك بالدخول</div>';
-                return false;
-            }
-            return true;
-        }
-        
-        if (!checkPassword()) {
-            // لا تُحمّل
+        if (secretKey !== 'turath') {
+            document.body.innerHTML = '<div style="padding:50px;text-align:center;background:#f0f2f5;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;"><h2 style="color:#666;">الصفحة غير موجودة</h2><a href="index.html" style="margin-top:20px;color:#667eea;">العودة للموقع</a></div>';
         } else {
             window.addEventListener('load', () => {
             setTimeout(refreshData, 500);
