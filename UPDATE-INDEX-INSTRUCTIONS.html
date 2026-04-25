@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديث index.html - إضافة سكريبتات النشرة</title>
+</head>
+<body>
+    <h1>تعليمات التحديث</h1>
+    <p>أضف السطور التالية إلى قسم &lt;head&gt; في index.html قبل إغلاق الـ tags:</p>
+
+    <code style="display: block; background: #f4f4f4; padding: 20px; margin: 20px 0; border-radius: 5px; direction: ltr; overflow-x: auto;">
+&lt;!-- النشرة البريدية --&gt;<br/>
+&lt;script src="newsletter-config.js"&gt;&lt;/script&gt;<br/>
+&lt;script src="newsletter-handler.js"&gt;&lt;/script&gt;
+    </code>
+
+    <p>بحيث يصبح ترتيب السكريبتات:</p>
+
+    <code style="display: block; background: #f4f4f4; padding: 20px; margin: 20px 0; border-radius: 5px; direction: ltr; overflow-x: auto;">
+    &lt;script src="data.js"&gt;&lt;/script&gt;<br/>
+    &lt;script src="newsletter-config.js"&gt;&lt;/script&gt;<br/>
+    &lt;script src="newsletter-handler.js"&gt;&lt;/script&gt;<br/>
+    &lt;script src="app.js"&gt;&lt;/script&gt;
+    </code>
+
+    <h2>✅ ملفات تم إنشاؤها:</h2>
+    <ul>
+        <li><strong>newsletter-config.js</strong> - النظام الكامل للنشرة</li>
+        <li><strong>newsletter-handler.js</strong> - معالج النموذج والإشعارات</li>
+        <li><strong>admin-newsletter.html</strong> - لوحة التحكم</li>
+        <li><strong>NEWSLETTER-GUIDE.html</strong> - دليل الاستخدام</li>
+    </ul>
+</body>
+</html>
