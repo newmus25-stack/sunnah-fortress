@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل استخدام النشرة البريدية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background: #f4f6f8;
+            color: #333;
+            direction: rtl;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #08731f; margin-bottom: 30px; }
+        h2 { color: #08731f; margin-top: 30px; margin-bottom: 15px; border-right: 4px solid #08731f; padding-right: 15px; }
+        .step { margin-bottom: 30px; }
+        .code {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            overflow-x: auto;
+            border-right: 3px solid #c5a059;
+        }
+        .warning {
+            background: #fef3c7;
+            border-right: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #dcfce7;
+            border-right: 4px solid #10b981;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .info {
+            background: #e0f2fe;
+            border-right: 4px solid #0284c7;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        ul { margin-right: 20px; }
+        li { margin-bottom: 10px; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 2px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table th, table td {
+            border: 1px solid #e1e3e5;
+            padding: 12px;
+            text-align: right;
+        }
+        table th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: #08731f;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 4px solid #08731f;
+        }
+        .feature-card h3 {
+            color: #08731f;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 دليل استخدام نظام النشرة البريدية</h1>
+
+        <h2>🎯 نظرة عامة</h2>
+        <p>تم تطوير نظام نشرة بريدية كامل يتيح للزوار الاشتراك والحصول على أحدث محتوى الموقع.</p>
+
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>✅ التحقق من البريد</h3>
+                <p>التحقق التلقائي من صيغة البريد الإلكتروني</p>
+            </div>
+            <div class="feature-card">
+                <h3>💾 تخزين آمن</h3>
+                <p>حفظ البيانات في localStorage للأمان</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔔 إشعارات فورية</h3>
+                <p>رسائل تأكيد مباشرة للمستخدم</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 لوحة تحكم</h3>
+                <p>إدارة شاملة للمشتركين والإحصائيات</p>
+            </div>
+        </div>
+
+        <h2>📋 خطوات الإعداد</h2>
+
+        <div class="step">
+            <h3>الخطوة 1: إنشاء حساب Formspree</h3>
+            <ol>
+                <li>اذهب إلى <code>https://formspree.io</code></li>
+                <li>أنشئ حساباً جديداً أو سجل الدخول</li>
+                <li>انقر على "Create Project"</li>
+                <li>أكمل بيانات المشروع</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>الخطوة 2: إنشاء نموذج بريد</h3>
+            <ol>
+                <li>انقر على "Create Form"</li>
+                <li>اختر نوع النموذج: "Email"</li>
+                <li>ستحصل على معرف النموذج (مثل: f/abc123def456)</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>الخطوة 3: تحديث الإعدادات</h3>
+            <p>افتح ملف <code>newsletter-config.js</code> وحدّث الجزء التالي:</p>
+            <div class="code">
+const NEWSLETTER_CONFIG = {
+    // استبدل "xyzabcde" برمز Formspree الفعلي
+    FORMSPREE_ID: "f/your-actual-formspree-id",
+    ...
+};
+            </div>
+            <div class="warning">
+                ⚠️ <strong>تنبيه:</strong> تأكد من استبدال <code>xyzabcde</code> برمز Formspree الفعلي
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>الخطوة 4: تحديث ملف app.js</h3>
+            <p>في ملف <code>app.js</code>، تحقق من أن دالة <code>handleNewsletterSubmit</code> موجودة وتعمل بشكل صحيح.</p>
+            <div class="code">
+// هذا الجزء موجود بالفعل في app.js:
+const newsletterForm = document.querySelector(".newsletter-form");
+if (newsletterForm) {
+    newsletterForm.addEventListener("submit", handleNewsletterSubmit);
+}
+            </div>
+        </div>
+
+        <h2>🔧 ملفات النظام</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>الملف</th>
+                    <th>الوصف</th>
+                    <th>الاستخدام</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>app.js</code></td>
+                    <td>الكود الرئيسي للموقع</td>
+                    <td>يحتوي على دالة handleNewsletterSubmit</td>
+                </tr>
+                <tr>
+                    <td><code>newsletter-config.js</code></td>
+                    <td>إعدادات وإدارة النشرة</td>
+                    <td>الإعدادات وAdminPanel والقوالب</td>
+                </tr>
+                <tr>
+                    <td><code>admin-newsletter.html</code></td>
+                    <td>لوحة التحكم</td>
+                    <td>إدارة المشتركين والإحصائيات</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🚀 طريقة الاستخدام</h2>
+
+        <h3>1️⃣ للزائرين (الاشتراك)</h3>
+        <div class="success">
+            ✅ يمكن للزائرين الاشتراك عبر نموذج البريد في أسفل الموقع
+        </div>
+
+        <h3>2️⃣ للمسؤولين (لوحة التحكم)</h3>
+        <p>اتبع الخطوات التالية للوصول إلى لوحة التحكم:</p>
+        <ol>
+            <li>افتح <code>admin-newsletter.html</code> في المتصفح</li>
+            <li>ستظهر الإحصائيات والقوائم الكاملة</li>
+            <li>يمكنك:
+                <ul>
+                    <li>👀 عرض قائمة المشتركين</li>
+                    <li>📊 الاطلاع على الإحصائيات</li>
+                    <li>📥 تصدير البيانات (CSV)</li>
+                    <li>🖨️ طباعة التقرير</li>
+                    <li>💾 إنشاء نسخة احتياطية</li>
+                    <li>✉️ إرسال بريد جماعي</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>💻 أوامر Console (للمطورين)</h2>
+        <p>يمكنك استخدام الأوامر التالية في console المتصفح:</p>
+
+        <div class="code">
+// عرض الإحصائيات
+newsletterAdmin.getStats();
+
+// عرض قائمة المشتركين
+newsletterAdmin.getSubscribersList();
+
+// تصدير CSV
+newsletterAdmin.exportAsCSV();
+
+// طباعة التقرير
+newsletterAdmin.printReport();
+
+// إنشاء نسخة احتياطية
+newsletterAdmin.createBackup();
+
+// حذف مشترك
+newsletterAdmin.deleteSubscriber('email@example.com');
+
+// إرسال بريد جماعي
+newsletterAdmin.sendBulkEmail('الموضوع', 'محتوى الرسالة');
+        </div>
+
+        <h2>🔐 الأمان والبيانات</h2>
+        <div class="info">
+            ℹ️ البيانات تُخزن محلياً في <code>localStorage</code> على الجهاز:
+            <ul>
+                <li>لا يتم إرسال البيانات إلى خوادم غير آمنة</li>
+                <li>الاتصال بـ Formspree آمن (HTTPS)</li>
+                <li>يمكن حذف البيانات من إعدادات المتصفح</li>
+            </ul>
+        </div>
+
+        <h2>🐛 استكشاف الأخطاء</h2>
+
+        <div class="step">
+            <h3>المشكلة: لا يظهر نموذج الاشتراك</h3>
+            <p>✅ الحل: تأكد من أن <code>newsletter-form</code> موجود في HTML</p>
+        </div>
+
+        <div class="step">
+            <h3>المشكلة: الاشتراك لا يعمل</h3>
+            <p>✅ الحل:</p>
+            <ol>
+                <li>تحقق من رمز Formspree في <code>newsletter-config.js</code></li>
+                <li>افتح console (F12) وتحقق من الأخطاء</li>
+                <li>تأكد من تفعيل JavaScript في المتصفح</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>المشكلة: البيانات لا تظهر في لوحة التحكم</h3>
+            <p>✅ الحل: قم بتحديث الصفحة أو استخدم أمر console:</p>
+            <div class="code">
+// عرّض الكائن:
+window.newsletterAdmin = new NewsletterAdmin();
+            </div>
+        </div>
+
+        <h2>📞 الدعم والمساعدة</h2>
+        <div class="info">
+            <p>للمزيد من المعلومات:</p>
+            <ul>
+                <li>📖 <a href="https://formspree.io/docs" target="_blank">توثيق Formspree</a></li>
+                <li>🔧 جرب الأوامر في console المتصفح</li>
+                <li>💬 راجع التعليقات في الأكواد</li>
+            </ul>
+        </div>
+
+        <h2>✨ الميزات المستقبلية</h2>
+        <ul>
+            <li>📧 إرسال رسائل بريدية منتظمة</li>
+            <li>📊 لوحة تحكم متقدمة مع رسوم بيانية</li>
+            <li>🎨 قوالب بريدية قابلة للتخصيص</li>
+            <li>🔔 إشعارات فورية عند محتوى جديد</li>
+            <li>🌐 دعم لغات متعددة</li>
+            <li>📱 تطبيق موبايل</li>
+        </ul>
+    </div>
+</body>
+</html>
