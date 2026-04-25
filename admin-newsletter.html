@@ -62,6 +62,7 @@
             <a href="#" onclick="exportCSV()">📥 تصدير CSV</a>
             <a href="#" onclick="createBackup()">💾 نسخة احتياطية</a>
             <a href="index.html">🌐 العودة للموقع</a>
+            <a href="#" onclick="exportStats()">📊 تصدير الإحصائيات</a>
         </div>
         
         <div class="stats">
@@ -70,16 +71,22 @@
                 <div class="label">إجمالي المشتركين</div>
             </div>
             <div class="stat-card">
+                <div class="value" id="views">0</div>
+                <div class="label">مشاهدات</div>
+            </div>
+            <div class="stat-card">
                 <div class="value" id="confirmed">0</div>
                 <div class="label">المؤكدون</div>
             </div>
             <div class="stat-card">
-                <div class="value" id="pending">0</div>
-                <div class="label">قيد الانتظار</div>
-            </div>
-            <div class="stat-card">
                 <div class="value" id="percentage">0%</div>
                 <div class="label">نسبة التأكيد</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📈 إحصائيات المتصفحين</h2>
+            <div id="stats-display" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;">
             </div>
         </div>
         
@@ -110,9 +117,9 @@
         
         if (secretKey !== 'turath') {
             document.body.innerHTML = '<div style="padding:50px;text-align:center;background:#f0f2f5;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;"><h2 style="color:#666;">الصفحة غير موجودة</h2><a href="index.html" style="margin-top:20px;color:#667eea;">العودة للموقع</a></div>';
-        } else {
+} else {
             window.addEventListener('load', () => {
-            setTimeout(refreshData, 500);
+            setTimeout(() => { refreshData(); renderSiteStats(); }, 500);
         });
         }
     </script>

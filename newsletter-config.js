@@ -113,3 +113,77 @@ class Newsletter {
 // تهيئة النظام
 window.newsletter = new Newsletter();
 console.log('✅ تم تحميل نظام النشرة البريدية');
+
+// ============================================
+// 📊 نظام الإحصائيات
+// ============================================
+const Stats = {
+    key: 'site_stats',
+    
+    init() {
+        const data = this.getData();
+        data.views = (data.views || 0) + 1;
+        data.lastVisit = new Date().toISOString();
+        data.browser = this.getBrowser();
+        data.country = 'مصر'; // يعتمد على IP
+        this.save(data);
+        
+        // إرسال لـ analytics خارجي (اختياري)
+        this.sendToAnalytics(data);
+    },
+    
+    getData() {
+        const data = localStorage.getItem(this.key);
+        return data ? JSON.parse(data) : { views: 0, visitors: [] };
+    },
+    
+    save(data) {
+        localStorage.setItem(this.key, JSON.stringify(data));
+    },
+    
+    getBrowser() {
+        const ua = navigator.userAgent;
+        if (ua.includes('Chrome')) return 'Chrome';
+        if (ua.includes('Firefox')) return 'Firefox';
+        if (ua.includes('Safari')) return 'Safari';
+        if (ua.includes('Edge')) return 'Edge';
+        return 'أخرى';
+    },
+    
+    sendToAnalytics(data) {
+        // يمكن إضافة كودanalytics هنا
+        console.log('إحصائيات:', data);
+    },
+    
+    getStats() {
+        const data = this.getData();
+        return {
+            views: data.views || 0,
+            uniqueVisitors: data.visitors?.length || 0,
+            browsers: this.getBrowserStats(data.visitors),
+            countries: this.getCountryStats(data.visitors)
+        };
+    },
+    
+    getBrowserStats(visitors) {
+        if (!visitors) return {};
+        const stats = {};
+        visitors.forEach(v => {
+            stats[v.browser] = (stats[v.browser] || 0) + 1;
+        });
+        return stats;
+    },
+    
+    getCountryStats(visitors) {
+        if (!visitors) return {};
+        const stats = {};
+        visitors.forEach(v => {
+            stats[v.country] = (stats[v.country] || 0) + 1;
+        });
+        return stats;
+    }
+};
+
+// تشغيل الإحصائيات
+Stats.init();
+window.siteStats = Stats;
