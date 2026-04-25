@@ -102,61 +102,28 @@
         </div>
     </div>
 
-    <script src="newsletter-config.js"></script>
+<script src="newsletter-config.js"></script>
     <script>
-        function renderTable() {
-            const tbody = document.getElementById('subscribers-list');
-            if (!window.newsletter || window.newsletter.subscribers.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" class="empty">لا يوجد مشتركين بعد</td></tr>';
-                return;
+        // كلمة المرور
+        const ADMIN_PASSWORD = "turath2026";
+        
+        function checkPassword() {
+            const password = prompt("أدخل كلمة المرور:");
+            if (password !== ADMIN_PASSWORD) {
+                alert("❌ كلمة مرور صحيحة");
+                document.body.innerHTML = '<div style="padding:50px;text-align:center;color:red;">غير مصرح لك بالدخول</div>';
+                return false;
             }
-            
-            tbody.innerHTML = window.newsletter.subscribers.map((s, i) => `
-                <tr>
-                    <td>${i + 1}</td>
-                    <td>${s.email}</td>
-                    <td>${new Date(s.subscribedAt).toLocaleDateString('ar-EG')}</td>
-                    <td><span class="status ${s.confirmed ? 'confirmed' : 'pending'}">${s.confirmed ? '✅ مؤكد' : '⏳ Pending'}</span></td>
-                    <td>
-                        <button class="btn btn-danger" onclick="deleteSubscriber('${s.email}')">🗑️ حذف</button>
-                    </td>
-                </tr>
-            `).join('');
+            return true;
         }
         
-        function refreshData() {
-            if (!window.newsletter) {
-                alert('❌ النظام غير محمل');
-                return;
-            }
-            
-            const stats = window.newsletter.getStats();
-            document.getElementById('total').textContent = stats.total;
-            document.getElementById('confirmed').textContent = stats.confirmed;
-            document.getElementById('pending').textContent = stats.pending;
-            document.getElementById('percentage').textContent = stats.percentage + '%';
-            
-            renderTable();
-        }
-        
-        function deleteSubscriber(email) {
-            if (confirm(`حذف ${email}؟`)) {
-                window.newsletter.unsubscribe(email);
-                refreshData();
-            }
-        }
-        
-        function exportCSV() {
-            window.newsletter.exportAsCSV();
-        }
-        
-        function createBackup() {
-            window.newsletter.createBackup();
-        }
-        
-        window.addEventListener('load', () => {
+        if (!checkPassword()) {
+            // لا تُحمّل
+        } else {
+            window.addEventListener('load', () => {
             setTimeout(refreshData, 500);
         });
+        }
     </script>
 </body>
 </html>
