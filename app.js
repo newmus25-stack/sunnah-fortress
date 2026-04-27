@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="tag" style="background: #eee; padding: 2px 10px; font-size: 0.75rem; border-radius: 2px; display: inline-block; margin-bottom: 10px;">${item.type}</span>
                 <h3 style="font-size: 1.4rem; color: #222; margin-bottom: 10px;">${highlight(item.title, filterTerm)}</h3>
                 <p style="margin: 10px 0; font-size: 0.95rem; color: var(--text-light);">إعداد: ${highlight(item.author, filterTerm)}</p>
-                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="read-btn" style="color: ${item.color || '#c5a059'}; font-weight: bold; text-decoration: none;">تحميل / مشاهدة المادة ←</a>
+                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="read-btn" style="color: ${item.color || '#c5a059'}; font-weight: bold; text-decoration: none;">تحميل / قراءة ←</a>
             </div>
         `).join('');
     }
