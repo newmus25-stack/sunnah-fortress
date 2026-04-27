@@ -232,6 +232,11 @@ document.addEventListener("DOMContentLoaded", () => {
     renderDoubts();
     renderLibrarySidebar();
     renderFullLibrary();
+
+    // Check hash on initial load
+    if (window.location.hash === '#concepts') {
+        setTimeout(() => showPage('concepts'), 100);
+    }
 });
 
 // Mobile Menu Toggle
