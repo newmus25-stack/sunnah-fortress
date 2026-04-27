@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حصن السنة - المنصة العلمية لرد الشبهات</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <span>منصة حصن السنة العلمية - إشراف الأستاذ: رؤوف صاولة</span>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header (Alukah Exact Layout) -->
+    <header class="main-header">
+        <div class="container header-grid">
+            <div class="logo-area">
+                <img src="logo.png" alt="حصن السنة" class="logo-placeholder">
+                <div class="site-titles">
+                    <h1>حصن السنة</h1>
+                    <p>الردود العلمية على شبهات المستشرقين</p>
+                </div>
+            </div>
+            <div class="header-action">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="ابحث في الشبهات والردود...">
+                    <button id="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">الرئيسية</a></li>
+                <li><a href="#axes">محاور الشبهات</a></li>
+                <li><a href="#doubts">أبرز الردود</a></li>
+                <li><a href="#library">المكتبة</a></li>
+                <li><a href="#bahith">المنصة الحديثية</a></li>
+                <li><a href="#bahith">الباحث العلمي</a></li>
+                <li><a href="#offer" class="special-link">احصل على الهدية</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Shopify Style Landing) -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge">إصدار 2026 الجديد</span>
+                <h2>ذبّاً عن حياض السنة النبوية.. بالعلم والبرهان</h2>
+                <p>نضع بين يديك أهم الردود المنهجية الإجمالية على شبهات المستشرقين والحداثيين، بأسلوب علمي هادئ وموثق. مكتبة متكاملة تجمع بين الدراسات التحليلية والمصادر التراثية المعتمدة.</p>
+                <div class="hero-btns">
+                    <a href="#doubts" class="btn btn-primary">تصفح الردود الآن</a>
+                    <a href="#offer" class="btn btn-secondary">تحميل الحقيبة العلمية</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-box">
+                    <img src="hero.png" alt="حصن السنة - صورة تعبيرية">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area (Alukah Exact Layout: Main + Sidebar) -->
+    <section class="main-layout container">
+        <div class="content-grid">
+            
+            <!-- Left Column: Main Content -->
+            <div class="main-col">
+                <!-- Axes Section -->
+                <div id="axes" class="section-block">
+                    <div class="section-header">
+                        <h2 class="title-border">محاور الدفاع عن السنة</h2>
+                    </div>
+                    <div class="axes-grid" id="categories-container">
+                        <!-- Categories will be injected -->
+                    </div>
+                </div>
+
+                <!-- Latest Doubts Section -->
+                <div id="doubts" class="section-block">
+                    <div class="section-header flex-between">
+                        <h2 class="title-border">أحدث الردود الموثقة</h2>
+                        <a href="#axes" class="view-all">تصفح المحاور</a>
+                    </div>
+                    <div class="doubts-list" id="doubts-container">
+                        <!-- Doubts will be injected -->
+                    </div>
+                </div>
+
+                <!-- Full Library Section -->
+                <div id="library" class="section-block">
+                    <div class="section-header">
+                        <h2 class="title-border">المكتبة العلمية والمرئيات</h2>
+                    </div>
+                    <div class="lib-grid" id="full-library-container">
+                        <!-- Full library items will be injected here -->
+                    </div>
+                </div>
+
+                <!-- Scholarly Tools Section -->
+                <div id="bahith" class="section-block">
+                    <div class="section-header">
+                        <h3 class="title-border">أدوات البحث العلمي المتخصصة</h3>
+                    </div>
+                    <div class="tools-grid">
+                        <!-- Tool 1: Al-Minasa (Hadith) -->
+                        <div class="bahith-card" style="background: linear-gradient(135deg, #08731f, #055015); color: #fff; padding: 30px; border-radius: 8px; text-align: center;">
+                            <i class="fas fa-microscope" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #fff;">المنصة الحديثية الذكية</h3>
+                            <p style="font-size: 0.95rem; margin-bottom: 20px; opacity: 0.9;">محرك بحث متخصص في تخريج الأحاديث والحكم عليها بدقة عالية.</p>
+                            <a href="https://alminasa.ai/" target="_blank" class="btn btn-gold btn-block">دخول المنصة</a>
+                        </div>
+                        
+                        <!-- Tool 2: Bahith.app (Books/MSS) -->
+                        <div class="bahith-card" style="background: linear-gradient(135deg, #c5a059, #b08d4a); color: #fff; padding: 30px; border-radius: 8px; text-align: center;">
+                            <i class="fas fa-book-atlas" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #fff;">الباحث العلمي</h3>
+                            <p style="font-size: 0.95rem; margin-bottom: 20px; opacity: 0.9;">محرك بحث شامل في الكتب والدروس والمخطوطات مع روابط مباشرة.</p>
+                            <a href="https://bahith.app/" target="_blank" class="btn btn-primary btn-block" style="background: #08731f;">دخول الباحث</a>
+                        </div>
+                        
+                        <!-- Tool 3: Al-Minasa (Quran) -->
+                        <div class="bahith-card" style="background: linear-gradient(135deg, #08731f, #055015); color: #fff; padding: 30px; border-radius: 8px; text-align: center;">
+                            <i class="fas fa-microscope" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #fff;">الموسوعة القرآنية الشاملة</h3>
+                            <p style="font-size: 0.95rem; margin-bottom: 20px; opacity: 0.9;">مصحف تفاعلي برواية ورش عن الإمام نافع من طريق الأزرق مع إمكانية الاستماع للقراء ومزايا أخرى متعددة.</p>
+                            <a href="https://quranpedia.net/mushaf/4" target="_blank" class="btn btn-gold btn-block">دخول المنصة</a>
+                        </div>
+                        <!-- Tool 3: Al-Minasa (Quran) -->
+                        <div class="bahith-card" style="background: linear-gradient(135deg, #08731f, #055015); color: #fff; padding: 30px; border-radius: 8px; text-align: center;">
+                            <i class="fas fa-microscope" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #fff;">الموسوعة القرآنية الشاملة</h3>
+                            <p style="font-size: 0.95rem; margin-bottom: 20px; opacity: 0.9;">مصحف تفاعلي برواية ورش عن الإمام نافع من طريق الأزرق مع إمكانية الاستماع للقراء ومزايا أخرى متعددة.</p>
+                            <a href="https://quranpedia.net/mushaf/4" target="_blank" class="btn btn-gold btn-block">دخول المنصة</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar (Shopify/Alukah Style) -->
+            <aside class="sidebar">
+                <!-- Offer Block -->
+                <div id="offer" class="offer-card">
+                    <h3>هدية المنصة</h3>
+                    <div class="offer-content">
+                        <i class="fas fa-book-open"></i>
+                        <h4>الثلاثينية في كشف شبهات المشككين في السنة النبوية</h4>
+                        <p>كتاب PDF يجمع 30 جوابا من خلال عقد موازنة بين حفظ القرآن وحفظ السنة جاهز للطباعة.</p>
+                        <a href="#" class="btn btn-gold btn-block">تحميل مجاني مباشر</a>
+                    </div>
+                </div>
+
+                <!-- Library Preview -->
+                <div class="sidebar-block">
+                    <h3 class="side-title">المكتبة المختارة</h3>
+                    <div class="side-list" id="library-preview">
+                        <!-- Library items injected -->
+                    </div>
+                </div>
+
+                <!-- Supervisor -->
+                <div class="sidebar-block supervisor-side">
+                    <h3 class="side-title">إشراف</h3>
+                    <div class="supervisor-info">
+                        <img src="supervisor.jpg" alt="رؤوف صاولة">
+                        <div class="text">
+                            <strong>الأستاذ: رؤوف صاولة</strong>
+                            <span>أستاذ الحديث وعلومه بجامعة الأمير عبد القادر للعلوم الإسلامية</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>حصن السنة</h3>
+                <p>منصة علمية تهدف إلى الدفاع عن السنة النبوية والرد على الطعون بأسلوب مختصر، وتوجيه القارئ للمراجع المعتمدة للوقوف على التفصيل.</p>
+            </div>
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#">عن المنصة</a></li>
+                    <li><a href="#">سياسة المحتوى</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>اشترك في النشرة العلمية</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="بريدك الإلكتروني">
+                    <button type="submit">اشترك</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            جميع الحقوق محفوظة لمنصة حصن السنة &copy; 2026
+        </div>
+    </footer>
+
+    <!-- Modal for Doubt Details (Shopify/Modern Style) -->
+    <div id="doubt-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

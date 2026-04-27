@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imscc:profile version="1.2" xmlns:imscc="http://www.imsglobal.org/imsccprofile/v1p0">
+  <imscc:context>
+    <imscc:type>Academic</imscc:type>
+  </imscc:context>
+  <imscc:learning>
+    <imscc:object>
+      <imscc:title>الهمز المزدوج من كلمة</imscc:title>
+      <imscc:description>درس قواعد التجويد - الهمز المزدوج</imscc:description>
+    </imscc:object>
+  </imscc:learning>
+</imscc:profile>

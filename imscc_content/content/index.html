@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الهمز المزدوج من كلمة - تجويد القرآن</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            color: #f9d923;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+        }
+        
+        .section {
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            font-family: 'Amiri', serif;
+            color: #f9d923;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f9d923;
+        }
+        
+        h3 {
+            color: #4ecca3;
+            font-size: 1.3rem;
+            margin: 20px 0 10px;
+        }
+        
+        .hamza-pattern {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 10px 5px;
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+        }
+        
+        .examples {
+            background: rgba(78, 204, 163, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        .examples ul {
+            list-style: none;
+            padding-right: 20px;
+        }
+        
+        .examples li {
+            padding: 12px 0;
+            position: relative;
+            font-size: 1.3rem;
+            font-family: 'Amiri', serif;
+            font-weight: 500;
+        }
+        
+        .examples li::before {
+            content: "✦";
+            color: #4ecca3;
+            position: absolute;
+            right: -20px;
+        }
+        
+        .rule-box {
+            background: linear-gradient(135deg, #f9d923 0%, #ff6b6b 100%);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .note {
+            background: rgba(255, 107, 107, 0.1);
+            border-right: 4px solid #ff6b6b;
+            padding: 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .note strong {
+            color: #ff6b6b;
+            font-size: 1.1rem;
+        }
+        
+        .important {
+            background: rgba(249, 217, 35, 0.1);
+            border: 2px solid #f9d923;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .important h3 {
+            color: #f9d923;
+        }
+        
+        .aya-ref {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 3px;
+            color: #a0a0a0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.2rem; }
+            h3 { font-size: 1.1rem; }
+            .container { padding: 10px; }
+            .section { padding: 18px; margin-bottom: 15px; }
+            header { padding: 25px 15px; }
+            .hamza-pattern { padding: 8px 15px; font-size: 1.1rem; margin: 5px 2px; }
+            .rule-box { padding: 12px 15px; font-size: 1rem; }
+            .aya-ref { font-size: 0.8rem; padding: 4px 10px; }
+            .examples li { font-size: 1.05rem; }
+            .note { padding: 12px; font-size: 0.95rem; }
+            .important { padding: 15px; }
+            body { font-size: 16px; line-height: 1.8; }
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 1.4rem; }
+            .subtitle { font-size: 0.9rem; }
+            .section { border-radius: 10px; }
+            .hamza-pattern { font-size: 1rem; }
+            .aya-ref { display: block; margin: 5px 0; }
+        }
+        
+        @media (hover: none) {
+            .section:hover { transform: none; }
+        }
+        
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+        
+        html {
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>الهمز المزدوج من كلمة</h1>
+            <p class="subtitle">شرح قواعد التجويد برواية ورش عن نافع</p>
+        </header>
+
+        <section class="section">
+            <h2>حكم التقاء همزتين قطعيتين متحركتين من كلمة واحدة</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">نجد بالقرآن الكريم ثلاث صور لالتقاء الهمزتين القطعيتين المتحركتين من كلمة واحدة:</p>
+        </section>
+
+        <section class="section">
+            <h3>الصورة الأولى: همزتين مفتوحتين <span class="hamza-pattern">ءَءَ</span></h3>
+            <div class="examples">
+                <p style="color: #4ecca3; margin-bottom: 10px;">☰ الأمثلة:</p>
+                <ul>
+                    <li>أَأَلَد</li>
+                    <li>أَأَمِنتُم</li>
+                    <li>أَأَنذرتهم</li>
+                </ul>
+            </div>
+            <div class="rule-box">
+                <strong>الحكم:</strong> الإبدال أو التسهيل
+            </div>
+            <p style="margin-top: 15px; line-height: 1.8; color: #ccc;">
+                ورش رحمه الله يحقق الهمزة الأولى والثانية، والتغيير يكون بالإبدال أو التسهيل (بين بين) من غير إدخال ألف بين الهمزتين.
+            </p>
+            <div class="note">
+                <strong>ملاحظة:</strong> مقدار المد مع الإبدال:<br>
+                • أألـد → ءالد → مد طبيعي (لأن بعدها حرف متحرك)<br>
+                • أأنذرتهم →ءااانذرتهم → إشباع (لأن بعدها حرف ساكن)
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>الصورة الثانية: همزة مفتوحة فمضمومة <span class="hamza-pattern">ءَءُ</span></h3>
+            <p style="color: #f9d923; margin-bottom: 10px;">محصورة في أربعة مواضع:</p>
+            <div class="examples">
+                <ul>
+                    <li>أُأُنَبِّئُكُم <span class="aya-ref">(آل عمران 15)</span></li>
+                    <li>أُأُنزِلَ عليه الذِّكر <span class="aya-ref">(ص 8)</span></li>
+                    <li>أُأُشْهِدوا <span class="aya-ref">(الزخرف 19)</span></li>
+                    <li>أَأُلْقِيَ اَ۬لذِّكْرُ عَلَيْهِ  <span class="aya-ref">(القمر 25)</span></li>
+                </ul>
+            </div>
+            <div class="rule-box">
+                <strong>الحكم:</strong> التسهيل فقط
+            </div>
+            <p style="margin-top: 10px; color: #ccc;">
+                تحقيق الهمزة الأولى وتسهيل الثانية بين الهمز والواو المدية من غير إدخال ألف بين الهمزتين.
+            </p>
+        </section>
+
+        <section class="section">
+            <h3>الصورة الثالثة: همزة مفتوحة فمكسورة <span class="hamza-pattern">ءَءِ</span></h3>
+            <p style="color: #f9d923; margin-bottom: 10px;">وردت في تسعة مواضع:</p>
+            <div class="examples">
+                <ul>
+                    <li>أَإِذا - أَإِلَه - أَإِنَّك - أَإِنَّا - أَإِنَّكُم</li>
+                    <li>أَإِن ذَكَرتم - أَئِمَّة - أَإِفك</li>
+                </ul>
+            </div>
+            <div class="rule-box">
+                <strong>الحكم:</strong> التسهيل فقط
+            </div>
+            <p style="margin-top: 10px; color: #ccc;">
+                تحقيق الهمزة الأولى وتسهيل الثانية بين الهمز والياء المدية من غير إدخال ألف بين الهمزتين.
+            </p>
+            <div class="note">
+                <strong>ملاحظة:</strong> الهمزة الأولى دائماً مفتوحة وهي همزة استفهام إلا في كلمة "أئمة".
+            </div>
+        </section>
+
+        <section class="section important">
+            <h2>ملاحظات هامة جداً</h2>
+            
+            <h3>1. لفظ "أرأيت" عند ورش</h3>
+            <p style="color: #ccc; line-height: 1.8;">
+                التسهيل في الهمزة الثانية، وله فيها أيضاً الإبدال مع المد.<br>
+                <strong>يتعين التسهيل فقط في:</strong> أأنت - أرأيت<br>
+                <em>لئلا تجتمع ثلاث سواكن: (ءانْتْ - أرايْتْ)</em>
+            </p>
+            
+            <h3>2. اجتماع ثلاث همزات في كلمة واحدة</h3>
+            <p style="color: #ccc; line-height: 1.8;">
+                يتعين التسهيل فقط في الهمزة الثانية مع القصر والتوسط والإشباع.<br>
+                • أءامنتم ← أصلها: ءَءَءْمنتم<br>
+                • أءالهتنا ← أصلها: ءَءَءْلهتنا<br>
+                <em>لئلا يَلتبس الاستفهام بالخبر</em>
+            </p>
+            
+            <h3>3. كلمة "أئمة"</h3>
+            <p style="color: #ccc; line-height: 1.8;">
+                وردت بخمس مواضع في القرآن:<br>
+                • سورة التوبة آية 12<br>
+                • سورة الأنبياء آية 73<br>
+                • سورة القصص آية 41، 5<br>
+                • سورة السجدة آية 24<br>
+                <strong>قرأ ورش بالتسهيل فقط</strong> - أما إبداله ياءاً فهو مذهب النحويين.
+            </p>
+        </section>
+
+        <footer>
+            <p>📖 الدرس من موقع battota | 2010</p>
+            <p style="margin-top: 10px; color: #666;">وفقنا الله وإياكم لتلاوة القرآن الكريم على الوجه الذي يُرضيه</p>
+        </footer>
+    </div>
+</body>
+</html>

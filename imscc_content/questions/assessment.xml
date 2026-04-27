@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/ims_qtiasiv2p1 http://www.imsglobal.org/xsd/ims_qtiasiv2p1p1.xsd">
+  <assessment ident="assessment_01" title="الهمز المزدوج من كلمة">
+    <section ident="section_01" title="اختبار الهمز المزدوج">
+      <item ident="item_01" title="حكم التقاء همزتين قطعيتين متحركتين">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">حكم التقاء همزتين قطعيتين متحركتين من كلمة واحدة:</mattext>
+          </material>
+          <response_lid ident="response_01" rcardinality="Single">
+            <render_choice>
+              <response_label ident="option_1"><material><mattext>الإبدال فقط</mattext></material></response_label>
+              <response_label ident="option_2"><material><mattext>التسهيل فقط</mattext></material></response_label>
+              <response_label ident="option_3"><material><mattext>الإبدال أو التسهيل</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_01">option_3</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="item_02" title="الصورة الأولى">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">الصورة الأولى: همزتين مفتوحتين (ءَءَ) في: أألد - أأمنتم - أأنذرتهم<br/>الحكم:</mattext>
+          </material>
+          <response_lid ident="response_02" rcardinality="Single">
+            <render_choice>
+              <response_label ident="a1"><material><mattext>الإبدال والتسهيل</mattext></material></response_label>
+              <response_label ident="a2"><material><mattext>الإبدال فقط</mattext></material></response_label>
+              <response_label ident="a3"><material><mattext>التسهيل فقط</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_02">a1</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="item_03" title="الصورة الثانية">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">الصورة الثانية: همزة مفتوحة فمضمومة (ءَءُ) في: أؤنبئكم - أؤنزل - أؤشهدوا - أؤلقي<br/>الحكم:</mattext>
+          </material>
+          <response_lid ident="response_03" rcardinality="Single">
+            <render_choice>
+              <response_label ident="b1"><material><mattext>الإبدال</mattext></material></response_label>
+              <response_label ident="b2"><material><mattext>التسهيل</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_03">b2</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="item_04" title="الصورة الثالثة">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">الصورة الثالثة: همزة مفتوحة فمكسورة (ءَءِ) في: أإذا - أإله - أإنك - أإنا<br/>الحكم:</mattext>
+          </material>
+          <response_lid ident="response_04" rcardinality="Single">
+            <render_choice>
+              <response_label ident="c1"><material><mattext>الإبدال</mattext></material></response_label>
+              <response_label ident="c2"><material><mattext>التسهيل</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_04">c2</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="item_05" title="كلمة أئمة">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">كلمة "أئمة" في القرآن (5 مواضع):<br/>- سورة التوبة آية 12<br/>- سورة الأنبياء آية 73<br/>- سورة القصص آية 41،5<br/>- سورة السجدة آية 24<br/>قرأ ورش:</mattext>
+          </material>
+          <response_lid ident="response_05" rcardinality="Single">
+            <render_choice>
+              <response_label ident="d1"><material><mattext>الإبدال</mattext></material></response_label>
+              <response_label ident="d2"><material><mattext>التسهيل فقط</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_05">d2</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="item_06" title="ثلاث همزات">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">إذا اجتمع ثلاث همزات في كلمة واحدة (أءامنتم - أءالهتنا):<br/>ورش يسهل الهمزة الثانية:</mattext>
+          </material>
+          <response_lid ident="response_06" rcardinality="Single">
+            <render_choice>
+              <response_label ident="e1"><material><mattext>يتعين التسهيل فقط</mattext></material></response_label>
+              <response_label ident="e2"><material><mattext>يخير بين الإبدال والتسهيل</mattext></material></response_label>
+              <response_label ident="e3"><material><mattext>يتعين الإبدال</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_06">e1</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="item_07" title="لفظ أرأيت">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">لفظ "أرأيت" و "أأنت" عند ورش:<br/>الوقف يكون:</mattext>
+          </material>
+          <response_lid ident="response_07" rcardinality="Single">
+            <render_choice>
+              <response_label ident="f1"><material><mattext>بالإبدال</mattext></material></response_label>
+              <response_label ident="f2"><material><mattext>بالتسهيل فقط</mattext></material></response_label>
+              <response_label ident="f3"><mattext>بالتسهيل أو الإبدال</mattext></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_07">f2</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="item_08" title="المد بعد الإبدال">
+        <presentation>
+          <material>
+            <mattext texttype="text/html">عند الإبدال في همزتين مفتوحتين، أألد (ءالد) يكون المد:</mattext>
+          </material>
+          <response_lid ident="response_08" rcardinality="Single">
+            <render_choice>
+              <response_label ident="g1"><material><mattext>مد مشبع</mattext></material></response_label>
+              <response_label ident="g2"><material><mattext>مد طبيعي</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar vartype="Integer" defaultval="0"/></outcomes>
+          <respcondition>
+            <conditionvar><varequal respident="response_08">g2</varequal></conditionvar>
+            <setvar action="Set" varname="SCORE">1</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+    </section>
+  </assessment>
+</questestinterop>

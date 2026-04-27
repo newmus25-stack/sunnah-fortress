@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="MN01000000000000000000000000000000000000000000" version="1.2">
+  <metadata>
+    <schema>IMS Common Cartridge</schema>
+    <schemaversion>1.2.0</schemaversion>
+    <imscc:profile xmlns:imscc="http://www.imsglobal.org/imsccprofile/v1p0">
+      <imscc:location>imscc_profile.xml</imscc:location>
+    </imscc:profile>
+  </metadata>
+  <organizations>
+    <organization identifier="ORG-ROOT" structure="rooted">
+      <item identifier="ITEM-ROOT" title="الهمز المزدوج من كلمة">
+        <item identifier="ITEM-01" title="الصورة الأولى: همزتين مفتوحتين (ءَءَ)">
+          <item identifier="ITEM-01-01" title="أمثلة: أألد - أأمنتم - أأنذرتهم"/>
+          <item identifier="ITEM-01-02" title="الحكم: الإبدال والتسهيل"/>
+          <item identifier="ITEM-01-03" title="ملاحظة: مقدار المد مع الإبدال"/>
+        </item>
+        <item identifier="ITEM-02" title="الصورة الثانية: همزة مفتوحة فمضمومة (ءَءُ)">
+          <item identifier="ITEM-02-01" title="مواضع: أؤنبئكم - أؤنزل - أؤشهدوا - أؤلقي"/>
+          <item identifier="ITEM-02-02" title="الحكم: التسهيل"/>
+        </item>
+        <item identifier="ITEM-03" title="الصورة الثالثة: همزة مفتوحة فمكسورة (ءَءِ)">
+          <item identifier="ITEM-03-01" title="ألفاظ: أإذا - أإله - أإنك - أإنا"/>
+          <item identifier="ITEM-03-02" title="الحكم: التسهيل"/>
+        </item>
+        <item identifier="ITEM-04" title="ملاحظات هامة">
+          <item identifier="ITEM-04-01" title="لفظ أرأيت: التسهيل فقط"/>
+          <item identifier="ITEM-04-02" title="ثلاث همزات: التسهيل فقط"/>
+          <item identifier="ITEM-04-03" title="كلمة أئمة: التسهيل فقط"/>
+        </item>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-QUESTION-BANK" type="imsqti_xmlv2p1">
+      <file href="questions/assessment.xml"/>
+    </resource>
+    <resource identifier="RES-CONTENT-01" type="webcontent">
+      <file href="content/intro.htm"/>
+    </resource>
+  </resources>
+</manifest>

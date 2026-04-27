@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حصن السنة - الردود العلمية على شبهات المنكرين</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #1a5f3c;
+            --primary-light: #2d7a4f;
+            --secondary: #d4af37;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, #1a5f3c 0%, #0f3460 100%);
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+        
+        /* Header */
+        .hero {
+            background: var(--gradient);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .logo { width: 120px; height: 120px; margin: 0 auto 30px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 60px; color: var(--primary); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .hero h1 { font-family: 'Amiri', serif; font-size: 3.5rem; color: #fff; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero .subtitle { font-size: 1.4rem; color: var(--secondary); margin-bottom: 30px; }
+        .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 40px; line-height: 2; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 15px 35px; border-radius: 50px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--secondary); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+        .btn-secondary { background: transparent; color: #fff; border: 2px solid #fff; }
+        .btn-secondary:hover { background: #fff; color: var(--primary); }
+        
+        /* Concepts Section */
+        .concepts { padding: 60px 20px; background: #fff; }
+        .section-title { text-align: center; font-family: 'Amiri', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; }
+        .concepts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .concept-card { background: var(--light); border-radius: 15px; padding: 25px; border: 1px solid #e2e8f0; transition: all 0.3s; cursor: pointer; }
+        .concept-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--secondary); }
+        .concept-card h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .concept-card h3 i { color: var(--secondary); }
+        .concept-card p { color: var(--gray); font-size: 0.95rem; }
+        
+        /* Axes Section */
+        .axes { padding: 60px 20px; background: linear-gradient(180deg, #f0fdf4 0%, #e0f2fe 100%); }
+        .axes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .axis-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: all 0.3s; }
+        .axis-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .axis-header { background: var(--gradient); padding: 25px; color: #fff; display: flex; align-items: center; gap: 15px; cursor: pointer; }
+        .axis-num { width: 50px; height: 50px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary); flex-shrink: 0; }
+        .axis-header h3 { font-family: 'Amiri', serif; font-size: 1.2rem; }
+        .axis-content { padding: 20px; }
+        .axis-content p { color: var(--gray); font-size: 0.95rem; margin-bottom: 15px; }
+        .suspicion-list { list-style: none; }
+        .suspicion-list li { padding: 12px 15px; background: var(--light); border-radius: 10px; margin-bottom: 10px; cursor: pointer; transition: all 0.3s; border-right: 3px solid var(--primary); }
+        .suspicion-list li:hover { background: #e8f5e9; border-right-color: var(--secondary); }
+        .suspicion-list li strong { color: var(--primary); }
+        
+        /* Details Section */
+        .detail-section { display: none; padding: 20px; background: #f8fafc; border-radius: 15px; margin-top: 15px; }
+        .detail-section.active { display: block; }
+        .detail-section h4 { color: var(--primary); font-size: 1.1rem; margin-bottom: 15px; }
+        .detail-box { padding: 15px; border-radius: 10px; margin-bottom: 15px; }
+        .evidence-box { background: #fef2f2; border-right: 4px solid #ef4444; }
+        .evidence-box h5 { color: #dc2626; margin-bottom: 10px; }
+        .response-box { background: #f0fdf4; border-right: 4px solid #22c55e; }
+        .response-box h5 { color: #16a34a; margin-bottom: 10px; }
+        
+        /* Footer */
+        footer { background: var(--dark); color: #fff; padding: 40px 20px; text-align: center; }
+        footer p { opacity: 0.8; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .btn { padding: 12px 25px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="logo">🕌</div>
+        <h1>حصن السنة</h1>
+        <p class="subtitle">الردود العلمية على شبهات المنكرين للسنة النبوية</p>
+        <p>منصة علمية تهدف إلى الدفاع عن السنة النبوية والرد على الطعون بأسلوب علمي هادئ وموثق</p>
+        <div class="hero-btns">
+            <a href="#axes" class="btn btn-primary">تصفح المحاور</a>
+            <a href="#concepts" class="btn btn-secondary">المفاهيم الأساسية</a>
+        </div>
+    </div>
+</section>
+
+<!-- Concepts Section -->
+<section id="concepts" class="concepts">
+    <h2 class="section-title">مفاهيم وتعريفات</h2>
+    <div class="concepts-grid">
+        <div class="concept-card">
+            <h3><i class="fas fa-book"></i> مفهوم السنة</h3>
+            <p>ما أضيف إلى النبي محمد ﷺ من قول، أو فعل، أو تقرير، أو صفة خلقية.</p>
+        </div>
+        <div class="concept-card">
+            <h3><i class="fas fa-comments"></i> مفهوم الحديث</h3>
+            <p>ما يُنسَب للرسول ﷺ من قوله، وفعله، وتقريره وصفاته وأحواله.</p>
+        </div>
+        <div class="concept-card">
+            <h3><i class="fas fa-question-circle"></i> مفهوم الشبهات</h3>
+            <p>الشك والريبة في صحة السنة النبوية ومصداقيتها، وطعون في أسانيد واهية.</p>
+        </div>
+        <div class="concept-card">
+            <h3><i class="fas fa-reply-all"></i> مفهوم الردود</h3>
+            <p>الإجابات العلمية الموثقة على الشبهات المثارة حول السنة النبوية.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Axes Section -->
+<section id="axes" class="axes">
+    <h2 class="section-title">محاور الشبهات والردّ عليها</h2>
+    <div class="axes-grid">
+        
+        <!-- المحور الأول -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">١</span>
+                <h3>الشبهات التاريخية</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات تتعلق بأحداث تاريخية حول تدوين السنة وتصرفات الصحابة.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(1)"><strong>الشبهة ١:</strong> النهي عن كتابة الحديث</li>
+                    <li onclick="showDetail(3)"><strong>الشبهة ٣:</strong> منع الخلفاء رواية الحديث</li>
+                    <li onclick="showDetail(4)"><strong>الشبهة ٤:</strong> تشدد الخلفاء في الرواية</li>
+                    <li onclick="showDetail(5)"><strong>الشبهة ٥:</strong> حرق كتب الحديث</li>
+                    <li onclick="showDetail(6)"><strong>الشهلة ٦:</strong> تأخير تدوين السنة</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور الثاني -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٢</span>
+                <h3>مصدرية السنة</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات حول مدى كون السنة وحياً ومصدراً للتشريع.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(2)"><strong>الشهلة ٢:</strong> النهي القرآني عن اتباع السنة</li>
+                    <li onclick="showDetail(13)"><strong>الشهلة ١٣:</strong> السنة ليست وحياً</li>
+                    <li onclick="showDetail(16)"><strong>الشهلة ١٦:</strong> مصدر السنة ليس معصوماً</li>
+                    <li onclick="showDetail(31)"><strong>الشهلة ٣١:</strong> السنة لا تستقل بالتشريع</li>
+                    <li onclick="showDetail(33)"><strong>الشهلة ٣٣:</strong> السنة ليست حجة</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور الثالث -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٣</span>
+                <h3>الشبهات حول الرواة</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات تتعلق بصفات الرواة وعدالتهم.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(10)"><strong>الشهلة ١٠:</strong> رواة السنة بشر غير معصومين</li>
+                    <li onclick="showDetail(17)"><strong>الشهلة ١٧:</strong> الطعن في رواة السنة</li>
+                    <li onclick="showDetail(18)"><strong>الشهلة ١٨:</strong> أمية أبي هريرة</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور الرابع -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٤</span>
+                <h3>كتب الحديث</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات حول كتب الحديث وعلماء التدوين.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(7)"><strong>الشهلة ٧:</strong> السنة في قصور الأمراء</li>
+                    <li onclick="showDetail(11)"><strong>الشهلة ١١:</strong> ندرة الصحيح في البخاري</li>
+                    <li onclick="showDetail(12)"><strong>الشهلة ١٢:</strong> البخاري ومسلم لم يسلما</li>
+                    <li onclick="showDetail(30)"><strong>الشهلة ٣٠:</strong> جامعو السنة مكرهون</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور الخامس -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٥</span>
+                <h3>المنهجية</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات منهجية في رواية وتحقيق الحديث.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(8)"><strong>الشهلة ٨:</strong> الرواية بالمعنى</li>
+                    <li onclick="showDetail(19)"><strong>الشهلة ١٩:</strong> نقد السند دون المتن</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور السادس -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٦</span>
+                <h3>حجية السنة</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات حول ثبوت السنة وحجيتها.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(20)"><strong>الشهلة ٢٠:</strong> ندرة المتواتر</li>
+                    <li onclick="showDetail(21)"><strong>الشهلة ٢١:</strong> ظنية السنة</li>
+                    <li onclick="showDetail(32)"><strong>الشهلة ٣٢:</strong> منع العمل بالآحاد</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور السابع -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٧</span>
+                <h3>الاكتفاء بالقرآن</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات تدعي الاكتفاء بالقرآن دون السنة.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(22)"><strong>الشهلة ٢٢:</strong> هداية السنة ظرفية</li>
+                    <li onclick="showDetail(23)"><strong>الشهلة ٢٣:</strong> اليوم أكملت دينكم</li>
+                    <li onclick="showDetail(24)"><strong>الشهلة ٢٤:</strong> الاكتفاء بالقرآن</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور الثامن -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٨</span>
+                <h3>متن الحديث</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات تتعلق بمحتوى الأحاديث.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(9)"><strong>الشهلة ٩:</strong> اقتحام الغيب</li>
+                    <li onclick="showDetail(15)"><strong>الشهلة ١٥:</strong> ضياع الخطب</li>
+                    <li onclick="showDetail(25)"><strong>الشهلة ٢٥:</strong> السنة في الدرس اللغوي</li>
+                    <li onclick="showDetail(26)"><strong>الشهلة ٢٦:</strong> مخالفة الواقع</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- المحور التاسع -->
+        <div class="axis-card">
+            <div class="axis-header" onclick="toggleAxis(this)">
+                <span class="axis-num">٩</span>
+                <h3>التعارض والوضع</h3>
+            </div>
+            <div class="axis-content">
+                <p>شبهات حول الوضع والتلاعب.</p>
+                <ul class="suspicion-list">
+                    <li onclick="showDetail(27)"><strong>الشهلة ٢٧:</strong> مخالفة العقل</li>
+                    <li onclick="showDetail(28)"><strong>الشهلة ٢٨:</strong> مخالفة القرآن</li>
+                    <li onclick="showDetail(29)"><strong>الشهلة ٢٩:</strong> الوضع في الأحاديث</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Details Container -->
+<div id="details-container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+    <!-- Details will be inserted here by JavaScript -->
+</div>
+
+<footer>
+    <p>حصن السنة - المنصة العلمية لرد الشبهات © 2026</p>
+    <p style="margin-top: 10px;">قال تعالى: ﴿إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ﴾</p>
+</footer>
+
+<script>
+    const suspicions = {
+        1: {
+            title: "النهي النبوي عن كتابة الحديث",
+            evidence: "حديث أبي سعيد الخدري: «لا تكتبوا عني شيئًا إلا القرآن، ومن كتب عني شيئًا غير القرآن فليمحه».",
+            response: "أحاديث الإذن: روى عبد الله بن عمرو أن النبي أذن له في الكتابة. والتوفيق: النهي كان أولاً خشية الاختلاط بالقرآن، ثم جاء الإذن."
+        },
+        2: {
+            title: "النهي القرآني عن الإيمان بالسنة",
+            evidence: "آيات يفسرونها على عدم اتباع ما لم ينزل في القرآن.",
+            response: "القرآن أمر بطاعة الرسول: ﴿مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ﴾ والسنة هي بيان للقرآن."
+        },
+        3: {
+            title: "منع الخلفاء رواية الحديث",
+            evidence: "مواقف منسوبة لأبي بكر وعمر.",
+            response: "كان الهدف التثبت لا الإنكار. أبو بكر سأل عن الأحاديث عند الحاجة للقضاء."
+        },
+        4: {
+            title: "تشدد الخلفاء في الرواية",
+            evidence: "روايات تقول إن عمر كان يحبس المكثرين.",
+            response: "التشدد كان للتحري لا الرفض. الحبس المزعوم لم يثبت."
+        },
+        5: {
+            title: "حرق كتب الحديث",
+            evidence: "قصة منسوبة لأبي بكر أنه أحرق خمسمائة حديث.",
+            response: "الرواية ضعيفة السند. الذهبي said: 'فهذا لا يصح'."
+        },
+        6: {
+            title: "تأخير تدوين السنة",
+            evidence: "زعم أن السنة لم تدون إلا بعد قرنين.",
+            response: "التدوين بدأ في حياة النبي. في عهد عمر بن عبد العزيز بدأ التدوين الرسمي."
+        },
+        7: {
+            title: "السنة دونت في قصور الأمراء",
+            evidence: "زعم أن جمع السنة تم تحت إشراف الحكام.",
+            response: "علماء الحديث مستقلون. المنهج العلمي يضمن نقاء السنة."
+        },
+        8: {
+            title: "الرواية بالمعنى دون اللفظ",
+            evidence: "الرواة ينقلون المعنى فقط.",
+            response: "مقتصرة على من أتقن اللغة. معظم الأحاديث رويت باللفظ."
+        },
+        9: {
+            title: "اقتحام السنة حواجز الغيب",
+            evidence: "الأحاديث عن الغيب تخطي لحدود العقل.",
+            response: "الإيمان بالغيب أصل من أصول الإيمان. العقل محدود."
+        },
+        10: {
+            title: "رواة السنة بشر غير معصومين",
+            evidence: "الرواة بشر يخطئون.",
+            response: "علماء الحديث وضعوا أعلى معايير. تواتر الروايات يضمن صحة النقل."
+        },
+        11: {
+            title: "ندرة الصحيح في محفوظ البخاري",
+            evidence: "نسبة الأحاديث الصحيحة في البخاري قليلة.",
+            response: "البخاري انتقى من مئات الآلاف. ما تركه ليس بالضرورة ضعيفاً."
+        },
+        12: {
+            title: "البخاري ومسلم لم يسلما من الخطأ",
+            evidence: "بعض الأحاديث تخالف القرآن أو العقل.",
+            response: "سوء الفهم هو السبب. Imamان أعلم الناس بالحديث."
+        },
+        13: {
+            title: "السنة ليست وحيا",
+            evidence: "زعم أن السنة أقوال بشرية.",
+            response: "قال تعالى: ﴿وَمَا يَنطِقُ عَنِ الْهَوَىٰ . إِنْ هُوَ إِلَّا وَحْيٌ يُوحَىٰ﴾"
+        },
+        14: {
+            title: "ندرة الاستدلال بالحديث عن أبي حنيفة",
+            evidence: "أبو حنيفة يعتمد على الرأي.",
+            response: "أبو حنيفة كان يحفظ الحديث ويتشدد في قبول الضعيف."
+        },
+        15: {
+            title: "ضياع خمسمائة خطبة نبوية",
+            evidence: "رواية تزعم ضياع خمسمائة خطبة.",
+            response: "الرواية لا تصح. ما وصل يكفي لبيان الدين."
+        },
+        16: {
+            title: "مصدر السنة ليس معصوماً",
+            evidence: "النبي قد يصدر عنه اجتهاد.",
+            response: "النبي معصوم في تبليغ الرسالة. ما كان من اجتهاد الله يصوبه."
+        },
+        17: {
+            title: "الطعن في رواة السنة",
+            evidence: "محاولة إظهار عيوب في الرواة.",
+            response: "علماء الجرح والتعديل بحثوا بدقة. الطعن غالباً بلا دليل."
+        },
+        18: {
+            title: "مية أبي هريرة وتأخر إسلامه",
+            evidence: "أبو هريرة أمي وأسلم متأخراً.",
+            response: "الأمية لا تمنع الحفظ. كان ملازماً للنبي."
+        },
+        19: {
+            title: "نقد السند دون المتن",
+            evidence: "علماء الحديث ينظرون للسند فقط.",
+            response: "ينتقدون المتن أيضاً. صحة السند شرط لازم لا كافٍ."
+        },
+        20: {
+            title: "ندرة المتواتر في السنة",
+            evidence: "معظم الأحاديث آحاد.",
+            response: "العمل بالأحاديث الآحاد واجب. الأصول الكبرى متواترة."
+        },
+        21: {
+            title: "ظنية السنة",
+            evidence: "السنة مبناها على الظن.",
+            response: "الله أمر بالاتباع ولم يشترط اليقين. ﴿إِنْ يَتَّبَعُونَ إِلَّا الظَّنَّ﴾ ذم للظن بلا دليل."
+        },
+        22: {
+            title: "هداية السنة ظرفية",
+            evidence: "أحكام السنة لظرف زمني معين.",
+            response: "الشريعة صالحة لكل زمان. ما كان خاصاً بيّنه النبي."
+        },
+        23: {
+            title: "اليوم أكملت لكم دينكم",
+            evidence: "آية الإكمال تدل على كمال الدين دون السنة.",
+            response: "الدين كمل بمعنى اكتمال الأحكام. الشريعة في الصدور وجود حقيقي."
+        },
+        24: {
+            title: "الاكتفاء بالقرآن عن السنة",
+            evidence: "القرآن كامل يهدي.",
+            response: "القرآن أمر بالسنة. ﴿وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ﴾"
+        },
+        25: {
+            title: "عدم الاعتداد بالسنة في الدرس اللغوي",
+            evidence: "الأحاديث دخلها التغيير.",
+            response: "النبي أفصح العرب. الأحاديث حفظت بالألفاظ."
+        },
+        26: {
+            title: "مخالفة السنة للواقع",
+            evidence: "بعض الأحاديث تخالف الواقع.",
+            response: "سوء الفهم هو السبب. العلم يتطور."
+        },
+        27: {
+            title: "مخالفة السنة للعقل",
+            evidence: "أحاديث لا يقبلها العقل.",
+            response: "العقل لا يتعارض مع النقل. يجب التصديق بما لا ينطق عن الهوى."
+        },
+        28: {
+            title: "مخالفة السنة للقرآن",
+            evidence: "السنة فيها ما يخالف القرآن.",
+            response: "السنة تشرح القرآن وتخصصه. قاعدة: السنة تخصص العام."
+        },
+        29: {
+            title: "الوضع في الأحاديث",
+            evidence: "كثرة الأحاديث الموضوعة.",
+            response: "علم المصطلح والجرح والتعديل. الأئمة انتقوا من مئات الآلاف."
+        },
+        30: {
+            title: "جامعو السنة كتبوها مكرهين",
+            evidence: "العلماء أجبروا تحت ضغط الحكام.",
+            response: "العلماء رفضوا ضغط الحكام. شروطهم الصارمة دليل على استقلالهم."
+        },
+        31: {
+            title: "السنة لا تستقل بالتشريع",
+            evidence: "السنة مجرد تابع للقرآن.",
+            response: "السنة تأتي بأحكام لم يرد ذكرها في القرآن أصلاً."
+        },
+        32: {
+            title: "منع العمل بأحاديث الآحاد",
+            evidence: "الآحاد لا تفيد اليقين.",
+            response: "عمل الصحابة على قبول خبر الواحد. النبي كان يبعث رجلاً للتبليغ."
+        },
+        33: {
+            title: "السنة ليست حجة في الدين",
+            evidence: "السنة ليست مصدراً للتشريع.",
+            response: "إجماع الأمة على أن السنة حجة. من رد السنة فقد رد القرآن."
+        }
+    };
+
+    function toggleAxis(header) {
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showDetail(id) {
+        const data = suspicions[id];
+        const container = document.getElementById('details-container');
+        container.innerHTML = `
+            <div class="axis-card" style="margin-top: 20px;">
+                <div class="axis-header" style="background: linear-gradient(135deg, #d4af37 0%, #b8962e 100%);">
+                    <span class="axis-num">${id}</span>
+                    <h3>${data.title}</h3>
+                </div>
+                <div class="axis-content">
+                    <div class="detail-box evidence-box">
+                        <h5><i class="fas fa-exclamation-triangle"></i> الشبهة:</h5>
+                        <p>${data.evidence}</p>
+                    </div>
+                    <div class="detail-box response-box">
+                        <h5><i class="fas fa-check-circle"></i> الرد:</h5>
+                        <p>${data.response}</p>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://rasoulallah.net/ar/articles/category/1602" target="_blank" style="color: var(--primary); text-decoration: none;">
+                            <i class="fas fa-external-link-alt"></i> للمزيد من التفصيل
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

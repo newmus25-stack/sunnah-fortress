@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="الهمز_المزدوج_MANIFEST" version="1.0">
+  <metadata>
+    <schema>IMS Content</schema>
+    <schemaversion>1.1.3</schemaversion>
+    <title>الهمز المزدوج من كلمة</title>
+    <description>درس قواعد التجويد - الهمز المزدوج من كلمة واحدة</description>
+  </metadata>
+  <organizations>
+    <organization identifier="ORG_001">
+      <item identifier="ITEM_001" title="الهمز المزدوج">
+        <item identifier="ITEM_002" title="الصورة الأولى: همزتين مفتوحتين (ءَءَ)">
+          <item identifier="ITEM_003" title="أمثلة: أألد - أأمنتم - أأنذرتهم"/>
+          <item identifier="ITEM_004" title="الحكم: الإبدال والتسهيل"/>
+          <item identifier="ITEM_005" title="ملاحظة: مقدار المد مع الإبدال"/>
+        </item>
+        <item identifier="ITEM_006" title="الصورة الثانية: همزة مفتوحة فمضمومة (ءَءُ)">
+          <item identifier="ITEM_007" title="مواضع: أؤنبئكم - أؤنزل عليه - أؤشهدوا - أؤلقي"/>
+          <item identifier="ITEM_008" title="الحكم: التسهيل"/>
+        </item>
+        <item identifier="ITEM_009" title="الصورة الثالثة: همزة مفتوحة فمكسورة (ءَءِ)">
+          <item identifier="ITEM_010" title="ألفاظ: أإذا - أإله - أإنك - أإنا - أإنكم"/>
+          <item identifier="ITEM_011" title="الحكم: التسهيل"/>
+        </item>
+        <item identifier="ITEM_012" title="ملاحظات هامة">
+          <item identifier="ITEM_013" title="لفظ أرأيت: التسهيل فقط"/>
+          <item identifier="ITEM_014" title="ثلاث همزات: التسهيل فقط"/>
+          <item identifier="ITEM_015" title="كلمة أئمة: التسهيل فقط"/>
+        </item>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES_001" type="webcontent" href="content/intro.html">
+      <file href="content/intro.html"/>
+    </resource>
+    <resource identifier="RES_002" type="webcontent" href="content/image1.html">
+      <file href="content/image1.html"/>
+    </resource>
+  </resources>
+</manifest>

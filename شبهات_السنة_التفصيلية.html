@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشبهات الثلاثون لإنكار السنة - د. عبد العظيم المطعني</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary-green: #1a5f3c; --dark-green: #0d3d24; --gold: #d4af37; --light-gold: #f4e4ba; }
+        body { font-family: 'Cairo', sans-serif; background: #ffffff; min-height: 100vh; color: #333; font-size: 18px; line-height: 2; }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a5f3c 0%, #0f3460 100%);
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-family: 'Amiri', serif; font-size: 3rem; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 10px; }
+        .hero p { color: var(--light-gold); font-size: 1.3rem; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        
+        .intro-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid var(--primary-green);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .intro-section h2 { font-family: 'Amiri', serif; color: var(--primary-green); font-size: 1.8rem; margin-bottom: 10px; }
+        .intro-section p { color: #555; }
+        
+        .suspicion-card {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .suspicion-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        
+        .suspicion-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+        .suspicion-number {
+            background: var(--gold);
+            color: var(--dark-green);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .suspicion-title { font-family: 'Amiri', serif; font-size: 1.3rem; color: #fff; flex-grow: 1; }
+        .toggle-btn { background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer; transition: transform 0.3s; }
+        .suspicion-card.active .toggle-btn { transform: rotate(180deg); }
+        
+        .suspicion-content { padding: 25px; display: none; background: #fff; }
+        .suspicion-content.active { display: block; }
+        
+        .evidence-section { margin-bottom: 20px; }
+        .evidence-title { color: #c0392b; font-size: 1.1rem; margin-bottom: 10px; padding-right: 15px; border-right: 4px solid #c0392b; font-weight: bold; }
+        .evidence-content { background: #fff5f5; padding: 18px; border-radius: 10px; color: #333; line-height: 1.9; border: 1px solid #ffcccc; }
+        
+        .response-section { margin-top: 20px; }
+        .response-title { color: #27ae60; font-size: 1.1rem; margin-bottom: 10px; padding-right: 15px; border-right: 4px solid #27ae60; font-weight: bold; }
+        .response-content { background: #f0f9f4; padding: 18px; border-radius: 10px; color: #333; line-height: 1.9; border: 1px solid #d4efdf; }
+        
+        .quran-verse {
+            font-family: 'Amiri', serif;
+            color: var(--primary-green);
+            text-align: center;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 12px 0;
+            font-size: 1.1rem;
+            border: 1px solid var(--gold);
+            font-weight: bold;
+            display: block;
+        }
+        
+        .source-link {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            padding: 12px;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+        .source-link a { color: var(--primary-green); text-decoration: none; font-size: 0.9rem; }
+        
+        footer { background: var(--dark-green); text-align: center; padding: 30px; margin-top: 40px; border-top: 4px solid var(--gold); }
+        footer p { color: #fff; font-size: 0.95rem; }
+        
+        @media (max-width: 768px) { body { font-size: 16px; } .hero h1 { font-size: 2rem; } .suspicion-header { padding: 15px; } }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-content">
+        <h1>الشبهات الثلاثون لإنكار السنة</h1>
+        <p>د. عبد العظيم المطعني | ردود علمية على شبهات المنكرين للسنة النبوية</p>
+    </div>
+</header>
+
+<div class="container">
+    <section class="intro-section">
+        <h2>مقدمة الكتاب</h2>
+        <p>هذا الكتاب يرد على الشبهات الثلاثين التي أثارها منكرو السنة النبوية ضد الحديث النبوي، مع بيان ضعف هذه الشبهات ودحضها بالأدلة النقلية والعقلية.</p>
+    </section>
+
+    <!-- الشبهة 1 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">1</span>
+            <h3 class="suspicion-title">الشبة الأولى: النهي النبوي عن كتابة الحديث</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">
+                    حديث أبي سعيد الخدري الذي رواه مسلم: «لا تكتبوا عني شيئًا إلا القرآن، ومن كتب عني شيئًا غير القرآن فليمحه».<br>
+                    يزعمون أن هذا النهي يدل على أن السنة ليست من الدين، وأن النبي لم يرد تدوينها.
+                </div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p><strong>أولاً: أحاديث الإذن بكتابة الحديث:</strong></p>
+                    <p>روى أبو داود والحاكم عن عبد الله بن عمرو بن العاص، قال: "قلت يا رسول الله: إني أسمع منك الشيء فأكتبه. قال: نعم".</p>
+                    <p>وروى البخاري أن رجلاً من الأنصار طلب من النبي أن يكتب له شيئاً، فقال صلى الله عليه وسلم: "اكتبوا لأبي شاه".</p>
+                    <p><strong>ثانياً: التوفيق بين النهي والإذن:</strong></p>
+                    <p>النهي كان أولاً لخشية اختلاط الحديث بالقرآن، ثم جاء الإذن ثانياً بعد استقرار الأمر.</p>
+                    <div class="quran-verse">﴿مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ﴾</div>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24356" target="_blank">المصدر: موقع نصرة محمد صلى الله عليه وسلم</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 2 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">2</span>
+            <h3 class="suspicion-title">الشبة الثانية: النهي القرآني عن الإيمان بالسنة</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">آيات مثل: ﴿وَأَنْ تَقُولُوا عَلَى اللَّهِ مَا لَا تَعْلَمُونَ﴾ و ﴿اتَّبِعُوا مَا أُنْزِلَ إِلَيْكُمْ مِنْ رَبِّكُمْ﴾، ويفسرونها على أنها تعني عدم اتباع ما لم ينزل في القرآن فقط.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p><strong>القرآن يأمر بطاعة الرسول:</strong></p>
+                    <div class="quran-verse">﴿مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ﴾</div>
+                    <div class="quran-verse">﴿وَمَا آتَاكُمُ الرَّسُولُ فَخُذُوهُ وَمَا نَهَاكُمْ عَنْهُ فَانتَهُوا﴾</div>
+                    <p>السنة هي بيان للقرآن وتفصيل لمجمله.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24358" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 3 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">3</span>
+            <h3 class="suspicion-title">الشبة الثالثة: منع الخلفاء رواية الحديث</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">مواقف منسوبة لأبي بكر وعمر بن الخطاب رضي الله عنهما يزعمون أنها تدل على منعهم من رواية الحديث.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>الشيخان كانا يهدفان إلى التثبت في رواية الأحاديث، والإقلال من أحاديث الرخص لئلا يتكل الناس عليها.</p>
+                    <p>أبو بكر سأل الصحابة عن الأحاديث عند الحاجة للقضاء.</p>
+                    <p>عمر قال: "تعلموا السنة والفرائض كما تتعلمون القرآن".</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24364" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 4 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">4</span>
+            <h3 class="suspicion-title">الشبة الرابعة: تشدد الخلفاء في الرواية</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">روايات تقول إن عمر كان يحبس من يكثر من رواية الحديث.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>التشدد كان من باب التحري والضبط لا من باب الرفض.</p>
+                    <p>الحبس المزعوم لم يثبت بصحة.</p>
+                    <p>عمر قال: "إياكم والرأي، فإن أصحاب الرأي أعداء السنن".</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24369" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 5 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">5</span>
+            <h3 class="suspicion-title">الشبة الخامسة: حرق كتب الحديث</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">قصة منسوبة لأبي بكر الصديق رضي الله عنه أنه جمع خمسمائة حديث ثم أحرقها.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>هذه القصة ضعيفة السند. الذهبي علق عليها: "فهذا لا يصح".</p>
+                    <p>أبو بكر تردد في صدق راوٍ واحد فحرقها احتياطاً، لم يحرقها لأنها ليست من الدين.</p>
+                    <p>الصحابة كلهم عدول بشهادة القرآن.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24370" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 6 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">6</span>
+            <h3 class="suspicion-title">الشبة السادسة: تأخير تدوين السنة</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">زعمهم أن السنة لم تدون إلا بعد قرنين أو ثلاثة من وفاة النبي.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>التدوين بدأ في حياة النبي نفسه.</p>
+                    <p>في عهد الخلفاء كانت هناك صحف ومجاميع محفوظة.</p>
+                    <p>التدوين الرسمي بدأ بأمر من عمر بن عبد العزيز رضي الله عنه.</p>
+                    <p>القرآن ذاته لم يُدوَّن في حياة النبي.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24372" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 7 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">7</span>
+            <h3 class="suspicion-title">الشبة السابعة: السنة دونت في قصور الأمراء</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">زعمهم أن جمع السنة تم تحت إشراف الحكام.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>علماء الحديث كانوا مستقلين، ولم يخضعوا لضغط الحكام.</p>
+                    <p>المنهج العلمي الدقيق في الجرح والتعديل يضمن نقاء السنة.</p>
+                    <p>لولا استقلال العلماء لما وجدنا ما يخالف مصالح الحكام.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24374" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 8 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">8</span>
+            <h3 class="suspicion-title">الشبة الثامنة: الرواية بالمعنى دون اللفظ</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">أن الرواة كانوا ينقلون المعنى فقط دون الالتزام باللفظ الأصلي.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>جواز الرواية بالمعنى كان مقصوراً على من أتقن اللغة.</p>
+                    <p>معظم الأحاديث رويت باللفظ تماماً.</p>
+                    <p>علماء المصطلح وضعوا ضوابط لضمان عدم تحريف المعنى.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24384" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 9 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">9</span>
+            <h3 class="suspicion-title">الشبة التاسعة: اقتحام السنة حواجز الغيب</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">الأحاديث التي تتحدث عن الغيب يعتبرونها تخطيًا لحدود العقل.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>الإيمان بالغيب أصل من أصول الإيمان في الإسلام.</p>
+                    <p>العقل البشري محدود، والوحي يخبرنا بما لا نعلمه.</p>
+                    <p>هذه الأحاديث تتفق مع ما جاء في القرآن من أخبار الغيب.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24385" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 10 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">10</span>
+            <h3 class="suspicion-title">الشبة العاشرة: رواة السنة بشر غير معصومين</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">أن الرواة بشر يخطئون وينسون ويكذبون.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>علماء الحديث وضعوا أعلى معايير للتوثيق.</p>
+                    <p>تواتر الروايات وكثرة الطرق تضمن صحة النقل.</p>
+                    <p>الصحابة كلهم عدول بشهادة القرآن.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24386" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 11 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">11</span>
+            <h3 class="suspicion-title">الشبة الحادية عشرة: ندرة الصحيح في محفوظ البخاري</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">زعمهم أن نسبة الأحاديث الصحيحة في صحيح البخاري قليلة جدًا.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>البخاري انتقى من مئات الآلاف من الأحاديث ما وافق شروطه الصارمة.</p>
+                    <p>ما تركه ليس بالضرورة ضعيفاً.</p>
+                    <p>علماء الأمة أجمعوا على أن ما في الصحيحين أصح ما وصل.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24387" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 12 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">12</span>
+            <h3 class="suspicion-title">الشبة الثانية عشرة: البخاري ومسلم لم يسلما من الخطأ</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">وجود بعض الأحاديث التي يزعمون أنها تخالف القرآن أو العقل.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>ما يظنه البعض خطأ هو غالباً سوء فهم للحديث.</p>
+                    <p>الإمامان كانا من أعلم الناس بالحديث.</p>
+                    <p>العلماء شرحوا هذه الأحاديث وبيّنوا وجه الصواب.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24388" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 13 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">13</span>
+            <h3 class="suspicion-title">الشبة الثالثة عشرة: السنة ليست وحيا</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">زعمهم أن السنة مجرد أقوال وأفعال بشرية.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <div class="quran-verse">﴿وَمَا يَنطِقُ عَنِ الْهَوَىٰ . إِنْ هُوَ إِلَّا وَحْيٌ يُوحَىٰ﴾</div>
+                    <p>الوحي نوعان: متعبد بلفظه (القرآن)، وغير متعبد بلفظه (السنة).</p>
+                    <div class="quran-verse">﴿مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ﴾</div>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24389" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 14 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">14</span>
+            <h3 class="suspicion-title">الشبة الرابعة عشرة: ندرة الاستدلال بالحديث عن أبي حنيفة</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">أن Imam Abu Hanifa كان يعتمد على الرأي والقياس أكثر من الحديث.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>أبو حنيفة كان يحفظ الحديث ويعرفه.</p>
+                    <p>كان يتشدد في قبول الحديث إذا كان ضعيفاً.</p>
+                    <p>تلاميذهم استخدموا الأحاديث بكثرة.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24390" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 15 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">15</span>
+            <h3 class="suspicion-title">الشبة الخامسة عشرة: ضياع خمسمائة خطبة نبوية</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">رواية تزعم أن النبي ألقى خمسمائة خطبة لم تصل إلينا.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>هذه الرواية لا تصح سنداً ولا معنى.</p>
+                    <p>ما وصل إلينا يكفي لبيان الدين كاملاً.</p>
+                    <p>الخطب غالباً تتضمن معاني متكررة.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24391" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 16 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">16</span>
+            <h3 class="suspicion-title">الشبة السادسة عشرة: مصدر السنة ليس معصوما</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">زعمهم أن النبي قد يصدر عنه ما هو اجتهاد شخصي وليس وحياً.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>النبي معصوم في تبليغ الرسالة.</p>
+                    <p>ما كان من اجتهاده في أمور الدنيا، الله يصوبه.</p>
+                    <p>القرآن أمر بطاعته مطلقاً.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24392" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 17 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">17</span>
+            <h3 class="suspicion-title">الشبة السابعة عشرة: الطعن في رواة السنة</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">محاولة إظهار عيوب في بعض الرواة.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>علماء الجرح والتعديل بحثوا بدقة فائقة.</p>
+                    <p>الطعن غالباً ما يكون بلا دليل.</p>
+                    <p>الأحاديث الصحيحة نقلتها طبقات من الثقات.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24393" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 18 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">18</span>
+            <h3 class="suspicion-title">الشبة الثامنة عشرة: أمية أبي هريرة وتأخر إسلامه</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">أن أبا هريرة كان أميًا وأسلم بعد الفتح، فكيف حفظ؟</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>الأمية لا تمنع من الحفظ.</p>
+                    <p>أبو هريرة كان ملازماً للنبي جداً.</p>
+                    <p>علماء الأمة أثبتوا عدالته وضبطه.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24398" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 19 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">19</span>
+            <h3 class="suspicion-title">الشبة التاسعة عشرة: نقد السند دون المتن</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">زعمهم أن علماء الحديث ينظرون فقط للسند.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>علماء الحديث ينتقدون المتن أيضاً.</p>
+                    <p>صحة السند شرط لازم وليس كافياً.</p>
+                    <p>كثير من الأحاديث رُدَّت لضعف في المتن.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24399" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 20 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">20</span>
+            <h3 class="suspicion-title">الشبة العشرون: ندرة المتواتر في السنة</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">أن معظم الأحاديث آحاد لا تفيد اليقين.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>العمل بالأحاديث الآحاد واجب عند أهل العلم.</p>
+                    <p>الأصول الكبرى للدين متواترة.</p>
+                    <div class="quran-verse">﴿فَلَا جُنَاحَ عَلَيْهِمَا أَن يَتَرَاجَعَا إِن ظَنَّا أَن يُقِيمَا حُدُودَ اللَّهِ﴾</div>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24400" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 21 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">21</span>
+            <h3 class="suspicion-title">الشبة الحادية والعشرون: ظنية السنة</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">السنة مبناها على الظن والاحتمال.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>الله أمر باتباع الرسول ولم يشترط اليقين.</p>
+                    <p>حصول الظن الغالب كافٍ في الشرع.</p>
+                    <div class="quran-verse">﴿إِنْ يَتَّبَعُونَ إِلَّا الظَّنَّ﴾ - ذم للظن الذي لا دليل عليه</div>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24405" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 22 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">22</span>
+            <h3 class="suspicion-title">الشبة الثانية والعشرون: هداية السنة ظرفية</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">أحكام السنة كانت لظروف معينة.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>النبي بعث رحمة للعالمين، وشريعته صالحة لكل زمان.</p>
+                    <p>ما كان خاصاً بيّنه النبي.</p>
+                    <p>القواعد العامة جاءت مطلقة عامة.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24407" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 23 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">23</span>
+            <h3 class="suspicion-title">الشبة الثالثة والعشرون: اليوم أكملت لكم دينكم</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">آية الإكمال تدل على كمال الدين دون السنة.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>الدين كمل بمعنى أن الأحكام اكتملت.</p>
+                    <p>الشريعة في الصدور وجود حقيقي.</p>
+                    <p>التدوين وسيلة للحفظ.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24412" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 24 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">24</span>
+            <h3 class="suspicion-title">الشبة الرابعة والعشرون: الاكتفاء بالقرآن عن السنة</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">القرآن كامل يهدي للتي هي أقوم.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>القرآن أمرنا باتباع السنة.</p>
+                    <p>القرآن يذكر جمل الصلاة والزكاة، والسنة تفصلها.</p>
+                    <div class="quran-verse">﴿وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ﴾</div>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24413" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 25 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">25</span>
+            <h3 class="suspicion-title">الشبة الخامسة والعشرون: عدم الاعتداد بالسنة في الدرس اللغوي</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">الأحاديث دخلها التغيير فلا تصلح حجة لغوية.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>النبي أفصح العرب.</p>
+                    <p>علماء اللغة يستشهدون بالأحاديث.</p>
+                    <p>الأحاديث الصحيحة حفظت بالألفاظ.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24431" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 26 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">26</span>
+            <h3 class="suspicion-title">الشبة السادسة والعشرون: مخالفة السنة للواقع</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">بعض الأحاديث تخالف الواقع.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>سوء الفهم هو السبب.</p>
+                    <p>العلم يتطور.</p>
+                    <p>الأحاديث الغيبية لا تخضع للمقياس المادي.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24432" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 27 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">27</span>
+            <h3 class="suspicion-title">الشبة السابعة والعشرون: مخالفة السنة للعقل</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">أحاديث لا يقبلها العقل.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>العقل الصحيح لا يتعارض مع النقل الصحيح.</p>
+                    <p>ما دام الخبر ممن لا ينطق عن الهوى، وجب تصديقه.</p>
+                    <p>العقل يعجز عن كثير.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24442" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 28 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">28</span>
+            <h3 class="suspicion-title">الشبة الثامنة والعشرون: مخالفة السنة للقرآن</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">السنة فيها ما يخالف القرآن.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>السنة تشرح القرآن وتخصصه.</p>
+                    <p>قاعدة: السنة تخصص العام وتقيد المطلق.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24443" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 29 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">29</span>
+            <h3 class="suspicion-title">الشبة التاسعة والعشرون: الوضع في الأحاديث</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">كثرة الأحاديث الموضوعة.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>علماء الحديث وضعوا علم المصطلح والجرح والتعديل.</p>
+                    <p>الأئمة انتقوا من مئات الآلاف.</p>
+                    <p>الضعيف لا يقدح الصحيح.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24471" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 30 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">30</span>
+            <h3 class="suspicion-title">الشبة الثلاثون: جامعو السنة كتبوها مكرهين</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">العلماء أجبروا على جمعها تحت ضغط الحكام.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>العلماء رفضوا ضغط الحكام.</p>
+                    <p>لولا استقلالهم لوجدنا ما يخالفهم.</p>
+                    <p>شروطهم الصارمة دليل على استقلالهم.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24472" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 31 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">31</span>
+            <h3 class="suspicion-title">الشبة الحادية والثلاثون: السنة لا تستقل بالتشريع</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">السنة مجرد تابع للقرآن.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>السنة تأتي بأحكام لم يرد ذكرها في القرآن.</p>
+                    <p>مثال: تحريم كل ذي ناب من السباع.</p>
+                    <div class="quran-verse">﴿وَأَنزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ﴾</div>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24473" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 32 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">32</span>
+            <h3 class="suspicion-title">الشبة الثانية والثلاثون: منع العمل بأحاديث الآحاد</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">الآحاد لا تفيد اليقين.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>عمل الصحابة على قبول خبر الواحد.</p>
+                    <p>النبي كان يبعث رجلاً واحداً للتبليغ.</p>
+                    <p>لو لا القبول لضاع الدين.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24496" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+    <!-- الشبهة 33 -->
+    <div class="suspicion-card" onclick="toggleCard(this)">
+        <div class="suspicion-header">
+            <span class="suspicion-number">33</span>
+            <h3 class="suspicion-title">الشبة الثالثة والثلاثون: السنة ليست حجة في الدين</h3>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="suspicion-content">
+            <div class="evidence-section">
+                <h4 class="evidence-title">الدليل الذي يستندون إليه:</h4>
+                <div class="evidence-content">السنة ليست مصدراً للتشريع.</div>
+            </div>
+            <div class="response-section">
+                <h4 class="response-title">أدلة الرد:</h4>
+                <div class="response-content">
+                    <p>إجماع الأمة على أن السنة حجة.</p>
+                    <div class="quran-verse">﴿مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ﴾</div>
+                    <p>من رد السنة فقد رد القرآن.</p>
+                </div>
+            </div>
+            <div class="source-link"><a href="https://rasoulallah.net/ar/articles/article/24497" target="_blank">المصدر</a></div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>الشبهات الثلاثون لإنكار السنة - د. عبد العظيم المطعني</p>
+    <p style="margin-top: 10px;">قال تعالى: ﴿إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ﴾</p>
+</footer>
+
+<script>
+function toggleCard(card) {
+    card.classList.toggle('active');
+    const content = card.querySelector('.suspicion-content');
+    content.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
