@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderCategories() {
         const icons = {
             "تدوين_السنة": "fa-pen-nib",
-            "عدالة_الصحابة": "fa-users-check",
+            "عدالة_الصحابة": "fa-scale-balanced",
             "منهج_المحدثين": "fa-microscope",
-            "التعارض_الظاهري": "fa-scale-balanced",
+            "التعارض_الظاهري": "fa-conflict",
             "الاستشراق": "fa-globe"
         };
 
