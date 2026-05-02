@@ -68,12 +68,12 @@
     <nav class="sticky-nav">
         <div class="container">
             <ul class="nav-links">
-                <li><a href="#hero" class="active">الرئيسية</a></li>
-                <li><a href="#concepts">مفاهيم وتعريفات</a></li>
-                <li><a href="#axes">محاور الشبهات والردود</a></li>
-                <li><a href="#library">المكتبة</a></li>
-                <li><a href="#bahith">أدوات البحث</a></li>
-                <li><a href="#offer" class="special-link">احصل على الهدية</a></li>
+                <li><a href="#hero" onclick="showPage('home'); return false;" class="active">الرئيسية</a></li>
+                <li><a href="#concepts" onclick="showPage('concepts'); return false;">مفاهيم وتعريفات</a></li>
+                <li><a href="#axes" onclick="showPage('axes'); return false;">محاور الشبهات والردود</a></li>
+                <li><a href="#library" onclick="showPage('library'); return false;">المكتبة</a></li>
+                <li><a href="#bahith" onclick="showPage('bahith'); return false;">أدوات البحث</a></li>
+                <li><a href="#offer" onclick="showPage('offer'); return false;" class="special-link">احصل على الهدية</a></li>
             </ul>
         </div>
     </nav>
@@ -100,7 +100,7 @@
 
     <!-- Concepts Page (Hidden) -->
     <div id="concepts-page" style="display: none;">
-        <div class="back-btn" onclick="window.location.hash='#hero'">
+        <div class="back-btn" onclick="showPage('home'); return false;">
             <i class="fas fa-arrow-right"></i> العودة للرئيسية
         </div>
         <section id="concepts" class="concepts-section">
@@ -273,7 +273,7 @@
 
     <!-- Axes Page (Hidden) -->
     <div id="axes-page" style="display: none;">
-        <div class="back-btn" onclick="window.location.hash='#hero'" style="margin: 20px;">
+        <div class="back-btn" onclick="showPage('home'); return false;" style="margin: 20px;">
             <i class="fas fa-arrow-right"></i> العودة للرئيسية
         </div>
         <div class="container" style="padding-bottom: 60px;">
@@ -302,7 +302,7 @@
                         
     <!-- Istishraq Page (Hidden) -->
     <div id="istishraq-page" style="display: none;">
-        <div class="back-btn" onclick="window.location.hash='#hero'" style="margin: 20px;">
+        <div class="back-btn" onclick="showPage('home'); return false;" style="margin: 20px;">
             <i class="fas fa-arrow-right"></i> العودة للرئيسية
         </div>
         <div class="container" style="padding-bottom: 60px;">
@@ -871,7 +871,7 @@
 
     <!-- Hadatha Page (Hidden) -->
     <div id="hadatha-page" style="display:none;">
-        <div class="back-btn" onclick="window.location.hash='#hero'" style="margin: 20px;">
+        <div class="back-btn" onclick="showPage('home'); return false;" style="margin: 20px;">
             <i class="fas fa-arrow-right"></i> العودة للرئيسية
         </div>
         <div class="container" style="padding-bottom: 60px;">

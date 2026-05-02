@@ -1,33 +1,54 @@
-// app.js - Optimized Scholarly Logic
+// app.js - Universal Navigation Logic
 // 1. Global Navigation Function
 function showPage(pageId) {
-    const pages = ['concepts-page', 'axes-page', 'istishraq-page', 'hadatha-page'];
-    const hero = document.getElementById('hero');
-    const main = document.getElementById('main-layout');
+    console.log("Navigating to:", pageId);
+    
+    // Support for home aliases
+    const isHome = pageId === 'home' || pageId === 'hero' || !pageId;
+    
+    // Standalone pages map
+    const pages = {
+        'concepts': 'concepts-page',
+        'axes': 'axes-page',
+        'istishraq': 'istishraq-page',
+        'hadatha': 'hadatha-page'
+    };
 
     // Hide all standalone pages
-    pages.forEach(id => {
+    Object.values(pages).forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = 'none';
     });
 
-    if (pageId === 'home' || pageId === 'hero' || !pageId) {
+    const hero = document.getElementById('hero');
+    const main = document.getElementById('main-layout');
+
+    if (isHome) {
         if (hero) hero.style.display = 'block';
         if (main) main.style.display = 'block';
         window.scrollTo(0, 0);
-    } else if (pages.includes(pageId + '-page')) {
+        // Clean hash without trigger
+        if(window.location.hash) history.pushState("", document.title, window.location.pathname + window.location.search);
+    } else if (pages[pageId]) {
         if (hero) hero.style.display = 'none';
         if (main) main.style.display = 'none';
-        const el = document.getElementById(pageId + '-page');
+        const el = document.getElementById(pages[pageId]);
         if (el) el.style.display = 'block';
         window.scrollTo(0, 0);
+        window.location.hash = pageId;
     } else {
-        // It's an anchor within the home page
+        // It's an anchor within the home page (library, bahith, offer, etc)
         if (hero) hero.style.display = 'block';
         if (main) main.style.display = 'block';
         const target = document.getElementById(pageId);
         if (target) {
-            setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 50);
+            // Scroll to target
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+            window.location.hash = pageId;
+        } else {
+            window.scrollTo(0, 0);
         }
     }
 
@@ -35,23 +56,33 @@ function showPage(pageId) {
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.classList.remove('active');
         const href = a.getAttribute('href');
-        if (href === '#' + pageId || (pageId === 'home' && href === '#hero')) {
+        if (href === '#' + pageId || (isHome && href === '#hero')) {
             a.classList.add('active');
         }
     });
 }
 
-// 2. Hash Handling
+// 2. Hash Handling for Initial Load / Direct Access
 function handleHash() {
     const hash = window.location.hash.substring(1);
-    showPage(hash || 'home');
+    if (hash) {
+        showPage(hash);
+    }
 }
 
-window.addEventListener('hashchange', handleHash);
 window.addEventListener('load', handleHash);
 
+// 3. Helper: Show Notification (Safeguard for newsletter)
+window.showNotification = function(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+};
+
+// 4. Main Application Logic
 document.addEventListener("DOMContentLoaded", () => {
-    // Basic Info
     const categoriesContainer = document.getElementById("categories-container");
     const doubtsContainer = document.getElementById("doubts-container");
     const libraryPreview = document.getElementById("library-preview");
@@ -71,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return text.replace(regex, '<mark>$1</mark>');
     }
 
-    // 1. Render Categories (Axes)
+    // Render Categories (Axes)
     function renderCategories() {
         if (!categoriesContainer) return;
         const icons = {
@@ -90,12 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${cat.name}</h3>
             </div>
         `).join('') + `
-            <div class="axis-card" onclick="window.location.hash='#istishraq'" style="border-right-color: #f39c12; cursor: pointer; background-color: #fffaf0;">
+            <div class="axis-card" onclick="showPage('istishraq')" style="border-right-color: #f39c12; cursor: pointer; background-color: #fffaf0;">
                 <i class="fas fa-map-location-dot" style="color: #f39c12"></i>
                 <h3>اذهب بعيدا</h3>
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 10px; line-height: 1.4;">خريطة مفاهيمية لشبهات الاستشراق مع القواعد العشر لهدم نظريته</p>
             </div>
-            <div class="axis-card" onclick="window.location.hash='#hadatha'" style="border-right-color: #065f46; cursor: pointer; background-color: #f0fdf4;">
+            <div class="axis-card" onclick="showPage('hadatha')" style="border-right-color: #065f46; cursor: pointer; background-color: #f0fdf4;">
                 <i class="fas fa-book-open-reader" style="color: #065f46"></i>
                 <h3>نافذة على الحداثة</h3>
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 10px; line-height: 1.4;">دراسة نقدية في موقف الفكر الحداثي من السنة النبوية</p>
@@ -103,19 +134,20 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-    // 2. Render Doubts List
+    // filterByCat
     window.filterByCat = (catId) => {
         currentFilter = catId;
         if (searchInput) searchInput.value = ""; 
         renderDoubts();
         renderFullLibrary();
-        window.location.hash = '#axes';
+        showPage('axes');
         setTimeout(() => { 
             const d = document.getElementById("doubts");
             if(d) d.scrollIntoView({ behavior: 'smooth' }); 
         }, 100);
     };
 
+    // Render Doubts
     function renderDoubts(filterTerm = "") {
         if (!doubtsContainer) return;
         let filtered = currentFilter === 'all' 
@@ -136,11 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(axes) axes.style.display = "block";
         }
 
-        if (filtered.length === 0) {
-            doubtsContainer.innerHTML = `<p style="padding: 20px; text-align: center; color: var(--text-light);">عذراً، لم نجد نتائج تطابق بحثك.</p>`;
-            return;
-        }
-
         doubtsContainer.innerHTML = filtered.map(doubt => {
             const cat = appData.categories.find(c => c.id === doubt.categoryId) || { color: '#666', name: 'عام' };
             return `
@@ -154,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }).join('');
     }
 
-    // 3. Library Functions
+    // Library Functions
     function renderLibrarySidebar() {
         if (!libraryPreview) return;
         libraryPreview.innerHTML = appData.library.slice(0, 5).map(item => `
@@ -190,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `).join('');
     }
 
-    // 4. Modal Functions
+    // Modal Logic
     window.openDoubt = (id, highlightTerm = "") => {
         const doubt = appData.doubts.find(d => d.id === id);
         if(!doubt) return;
@@ -223,25 +250,25 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
-    // 5. Initialization
+    // Initialize everything
     renderCategories();
     renderDoubts();
     renderLibrarySidebar();
     renderFullLibrary();
 
-    // Search Logic
+    // Search trigger
     if (searchBtn && searchInput) {
         searchBtn.onclick = () => {
             const term = searchInput.value.trim();
             if(term) {
                 renderDoubts(term);
                 renderFullLibrary(term);
-                window.location.hash = '#axes';
+                showPage('axes');
             }
         };
     }
 
-    // Accordion Logic
+    // Accordion
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('accordion')) {
             e.target.classList.toggle('active');
