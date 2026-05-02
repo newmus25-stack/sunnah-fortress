@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>اذهب بعيدا</h3>
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 10px; line-height: 1.4;">خريطة مفاهيمية لشبهات الاستشراق مع القواعد العشر لهدم نظريته</p>
             </div>
+            <div class="axis-card" onclick="openHadathaModal()" style="border-right-color: #065f46; cursor: pointer; background-color: #f0fdf4;">
+                <i class="fas fa-book-open-reader" style="color: #065f46"></i>
+                <h3>نافذة على الحداثة</h3>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 10px; line-height: 1.4;">دراسة نقدية في موقف الفكر الحداثي من السنة النبوية</p>
+            </div>
         `;
     }
 
@@ -238,6 +243,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
             });
+        }
+    };
+
+    window.openHadathaModal = () => {
+        const content = document.getElementById("hadatha-content");
+        if(content) {
+            modalBody.innerHTML = content.innerHTML;
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
         }
     };
 
