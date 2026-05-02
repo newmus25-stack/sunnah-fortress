@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         searchInput.value = ""; 
         renderDoubts();
         renderFullLibrary();
-        document.getElementById("doubts").scrollIntoView({ behavior: 'smooth' });
+        showPage("axes"); setTimeout(() => { document.getElementById("doubts").scrollIntoView({ behavior: 'smooth' }); }, 50);
     };
 
     function renderDoubts(filterTerm = "") {
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             currentFilter = 'all'; 
             renderDoubts(term);
             renderFullLibrary(term);
-            document.getElementById("doubts").scrollIntoView({ behavior: 'smooth' });
+            showPage("axes"); setTimeout(() => { document.getElementById("doubts").scrollIntoView({ behavior: 'smooth' }); }, 50);
         } else {
             clearSearch();
         }
@@ -237,6 +237,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check hash on initial load
     if (window.location.hash === '#concepts') {
         setTimeout(() => showPage('concepts'), 100);
+    } else if (window.location.hash === '#axes') {
+        setTimeout(() => showPage('axes'), 100);
     }
 });
 
@@ -255,12 +257,17 @@ function toggleCard(card) {
 function showPage(pageId) {
     // Hide all pages
     document.getElementById('concepts-page').style.display = 'none';
+    const axesPage = document.getElementById('axes-page');
+    if (axesPage) axesPage.style.display = 'none';
     document.getElementById('hero').style.display = 'none';
     document.querySelector('.main-layout').style.display = 'none';
     
     // Show requested page
     if (pageId === 'concepts') {
         document.getElementById('concepts-page').style.display = 'block';
+        window.scrollTo(0, 0);
+    } else if (pageId === 'axes') {
+        if (axesPage) axesPage.style.display = 'block';
         window.scrollTo(0, 0);
     } else if (pageId === 'home') {
         document.getElementById('hero').style.display = 'block';
@@ -269,7 +276,8 @@ function showPage(pageId) {
     } else {
         document.getElementById('hero').style.display = 'block';
         document.querySelector('.main-layout').style.display = 'block';
-        document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
+        const el = document.getElementById(pageId);
+        if(el) el.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
@@ -277,5 +285,25 @@ function showPage(pageId) {
 window.addEventListener('hashchange', function() {
     if (window.location.hash === '#concepts') {
         showPage('concepts');
+    } else if (window.location.hash === '#axes') {
+        showPage('axes');
     }
 });
+
+
+    // Accordion functionality
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            // Toggle active class
+            this.classList.toggle("active");
+
+            // Toggle panel
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
