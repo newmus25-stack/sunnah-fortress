@@ -340,14 +340,15 @@ function showPage(pageId) {
 
 // Check URL hash on load
 window.addEventListener('hashchange', function() {
-    if (window.location.hash === '#concepts') {
-        showPage('concepts');
-    } else if (window.location.hash === '#axes') {
-        showPage('axes');
-    } else if (window.location.hash === '#istishraq') {
-        showPage('istishraq');
-    } else if (window.location.hash === '#hadatha') {
-        showPage('hadatha');
+    const h = window.location.hash;
+    if (h === '#concepts') showPage('concepts');
+    else if (h === '#axes') showPage('axes');
+    else if (h === '#istishraq') showPage('istishraq');
+    else if (h === '#hadatha') showPage('hadatha');
+    else if (h === '#library' || h === '#bahith' || h === '#offer') {
+        showPage(h.substring(1));
+    } else if (h === '#hero' || h === '' || h === '#home') {
+        showPage('home');
     }
 });
 
