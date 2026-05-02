@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "عدالة_الصحابة": "fa-scale-balanced",
             "منهج_المحدثين": "fa-microscope",
             "التعارض_الظاهري": "fa-conflict",
-            "الاستشراق": "fa-globe"
+            "الاستشراق": "fa-globe",
+            "الحديث_والسياسة": "fa-gavel"
         };
 
         categoriesContainer.innerHTML = appData.categories.map(cat => `
