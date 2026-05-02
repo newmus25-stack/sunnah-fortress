@@ -222,6 +222,22 @@ document.addEventListener("DOMContentLoaded", () => {
             modalBody.innerHTML = content.innerHTML;
             modal.style.display = "block";
             document.body.style.overflow = "hidden";
+
+            // Re-initialize accordion buttons inside the modal
+            const accordions = modalBody.querySelectorAll("button.accordion");
+            accordions.forEach(btn => {
+                btn.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    if (panel && panel.classList.contains("panel")) {
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    }
+                });
+            });
         }
     };
 

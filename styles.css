@@ -1279,4 +1279,208 @@ footer { background: #212b36; color: #fff; padding: 60px 0 0; }
             color: #999;
             font-size: 0.9em;
         }
-    
+
+/* ============================================
+   Istishraq Modal - Accordion & Panel Styles
+   ============================================ */
+.accordion {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 18px 25px;
+    width: 100%;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Amiri', 'Scheherazade New', serif;
+    transition: all 0.35s ease;
+    margin-top: 12px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.accordion::before {
+    content: '◀';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+    font-size: 13px;
+}
+.accordion.active::before {
+    transform: translateY(-50%) rotate(-90deg);
+}
+.accordion:hover {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border-color: #3498db;
+    transform: translateX(-5px);
+}
+.accordion.active {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    border-color: #2c3e50;
+}
+
+.panel {
+    padding: 25px 30px;
+    display: none;
+    background: linear-gradient(to bottom, #ffffff, #fafbfc);
+    border: 2px solid #3498db;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    line-height: 2;
+    text-align: justify;
+    animation: istSlideDown 0.4s ease;
+}
+@keyframes istSlideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Istishraq section headings inside modal */
+.ist-h1 {
+    color: #1a1a2e;
+    text-align: center;
+    font-size: 1.9em;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 4px solid #f39c12;
+}
+.ist-h2 {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    padding: 15px 22px;
+    border-radius: 10px;
+    margin-top: 40px;
+    font-size: 1.2em;
+}
+.highlight { color: #c0392b; font-weight: bold; font-size: 1.05em; }
+.source {
+    color: #e67e22;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9em;
+    border-top: 2px dashed #eee;
+    padding-top: 10px;
+}
+.mindmap-box {
+    border: 3px dashed #bdc3c7;
+    padding: 22px;
+    background: linear-gradient(135deg, #fdfefe, #f8f9f9);
+    margin: 18px 0;
+    border-radius: 15px;
+}
+.mindmap-box h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+.mindmap-box ul { padding-right: 20px; }
+.mindmap-box li { margin: 8px 0; line-height: 1.9; }
+
+/* Concept map inside modal */
+.concept-map { position: relative; padding: 25px 5px; margin: 25px 0; overflow-x: auto; }
+.map-center { text-align: center; margin-bottom: 25px; }
+.map-center .node-main {
+    display: inline-block;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #f39c12;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 3px solid #f39c12;
+}
+.map-branches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+.branch {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    border-top: 5px solid;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.branch:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.13); }
+.branch-1 { border-color: #e74c3c; }
+.branch-2 { border-color: #3498db; }
+.branch-3 { border-color: #27ae60; }
+.branch-4 { border-color: #f39c12; }
+.branch-5 { border-color: #9b59b6; }
+.branch-6 { border-color: #1abc9c; }
+.connector { text-align: center; font-size: 1.5em; color: #bdc3c7; margin: 5px 0; }
+.sub-node {
+    display: inline-block;
+    background: #ecf0f1;
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin: 3px;
+    font-size: 0.85em;
+    color: #555;
+}
+
+/* Rules grid */
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+.rule-card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    border-right: 5px solid #27ae60;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+}
+.rule-card:hover { transform: translateY(-4px); }
+.rule-num {
+    display: inline-block;
+    background: linear-gradient(135deg, #27ae60, #229954);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.rule-title { font-weight: bold; font-size: 1.05em; color: #2c3e50; display: block; margin-bottom: 10px; }
+.rule-desc { font-size: 0.95em; line-height: 1.8; color: #444; margin-bottom: 8px; }
+.rule-example { font-size: 0.88em; color: #7f8c8d; font-style: italic; }
+
+/* Books grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+.ist-book-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border-top: 4px solid #3498db;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+.ist-book-card h4 { font-size: 1.05em; color: #2c3e50; margin: 8px 0 5px; }
+.ist-book-card .author { color: #7f8c8d; font-size: 0.9em; margin-bottom: 8px; }
+.ist-book-card .desc { font-size: 0.88em; color: #555; line-height: 1.7; margin-bottom: 12px; }
+.ist-book-card a { color: #3498db; text-decoration: none; font-weight: bold; font-size: 0.95em; }
+.ist-book-card a:hover { text-decoration: underline; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.78em; margin-left: 5px; }
+.badge-ar { background: #e8f5e9; color: #27ae60; }
+.badge-en { background: #e3f2fd; color: #2196f3; }
+.badge-free { background: #fff3e0; color: #f39c12; }
