@@ -38,7 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 <i class="fas ${icons[cat.id] || 'fa-folder'}" style="color: ${cat.color}"></i>
                 <h3>${cat.name}</h3>
             </div>
-        `).join('');
+        `).join('') + `
+            <div class="axis-card" onclick="openIstishraqModal()" style="border-right-color: #f39c12; cursor: pointer; background-color: #fffaf0;">
+                <i class="fas fa-map-location-dot" style="color: #f39c12"></i>
+                <h3>اذهب بعيدا</h3>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 10px; line-height: 1.4;">خريطة مفاهيمية لشبهات الاستشراق مع القواعد العشر لهدم نظريته</p>
+            </div>
+        `;
     }
 
     // 2. Render Doubts List
@@ -207,6 +213,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.target == modal) {
             modal.style.display = "none";
             document.body.style.overflow = "auto";
+        }
+    };
+
+    window.openIstishraqModal = () => {
+        const content = document.getElementById("istishraq-content");
+        if(content) {
+            modalBody.innerHTML = content.innerHTML;
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
         }
     };
 
