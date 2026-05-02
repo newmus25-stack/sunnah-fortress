@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${cat.name}</h3>
             </div>
         `).join('') + `
-            <div class="axis-card" onclick="openIstishraqModal()" style="border-right-color: #f39c12; cursor: pointer; background-color: #fffaf0;">
+            <div class="axis-card" onclick="showPage('istishraq')" style="border-right-color: #f39c12; cursor: pointer; background-color: #fffaf0;">
                 <i class="fas fa-map-location-dot" style="color: #f39c12"></i>
                 <h3>اذهب بعيدا</h3>
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 10px; line-height: 1.4;">خريطة مفاهيمية لشبهات الاستشراق مع القواعد العشر لهدم نظريته</p>
             </div>
-            <div class="axis-card" onclick="openHadathaModal()" style="border-right-color: #065f46; cursor: pointer; background-color: #f0fdf4;">
+            <div class="axis-card" onclick="showPage('hadatha')" style="border-right-color: #065f46; cursor: pointer; background-color: #f0fdf4;">
                 <i class="fas fa-book-open-reader" style="color: #065f46"></i>
                 <h3>نافذة على الحداثة</h3>
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 10px; line-height: 1.4;">دراسة نقدية في موقف الفكر الحداثي من السنة النبوية</p>
@@ -305,6 +305,11 @@ function showPage(pageId) {
     document.getElementById('concepts-page').style.display = 'none';
     const axesPage = document.getElementById('axes-page');
     if (axesPage) axesPage.style.display = 'none';
+    const istPage = document.getElementById('istishraq-page');
+    if (istPage) istPage.style.display = 'none';
+    const hadPage = document.getElementById('hadatha-page');
+    if (hadPage) hadPage.style.display = 'none';
+
     document.getElementById('hero').style.display = 'none';
     document.querySelector('.main-layout').style.display = 'none';
     
@@ -314,6 +319,12 @@ function showPage(pageId) {
         window.scrollTo(0, 0);
     } else if (pageId === 'axes') {
         if (axesPage) axesPage.style.display = 'block';
+        window.scrollTo(0, 0);
+    } else if (pageId === 'istishraq') {
+        if (istPage) istPage.style.display = 'block';
+        window.scrollTo(0, 0);
+    } else if (pageId === 'hadatha') {
+        if (hadPage) hadPage.style.display = 'block';
         window.scrollTo(0, 0);
     } else if (pageId === 'home') {
         document.getElementById('hero').style.display = 'block';
@@ -333,6 +344,10 @@ window.addEventListener('hashchange', function() {
         showPage('concepts');
     } else if (window.location.hash === '#axes') {
         showPage('axes');
+    } else if (window.location.hash === '#istishraq') {
+        showPage('istishraq');
+    } else if (window.location.hash === '#hadatha') {
+        showPage('hadatha');
     }
 });
 
