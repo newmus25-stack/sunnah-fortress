@@ -1665,6 +1665,25 @@ footer { background: #212b36; color: #fff; padding: 60px 0 0; }
 .ssite-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 .ssite-card h4 { color: #064e3b; margin-bottom: 0.5rem; font-size: 1.05rem; }
 .ssite-card p { color: #6b7280; font-size: 0.95rem; margin: 0; }
+.article-content ul { padding-right: 20px; margin-bottom: 20px; }
+.article-content li { margin-bottom: 10px; }
+
+/* References List Styling */
+.ref-list {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px 35px 20px 20px !important;
+    list-style-type: square;
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+.ref-list li {
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 5px;
+}
+.ref-list li:last-child { border-bottom: none; }
 .ssite-card ul { padding-right: 1.2rem; margin-top: 0.5rem; }
 .ssite-card ul li { margin-bottom: 0.35rem; line-height: 1.8; }
 .ssite-card strong { color: #065f46; }
