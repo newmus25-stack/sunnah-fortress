@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شبهات الاستشراق حول السنة النبوية</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Amiri', serif;
+            background: linear-gradient(135deg, #064e3b, #064e3b, #064e3b);
+            color: #1a1a1a;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255,255,255,0.97);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #1a1a2e;
+            text-align: center;
+            font-size: 2.2em;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12);
+            border-radius: 2px;
+        }
+
+        h2 {
+            background: linear-gradient(135deg, #0a8a5f, #0a8a5f);
+            color: #ecf0f1;
+            padding: 18px 25px;
+            border-radius: 10px;
+            margin-top: 45px;
+            font-size: 1.3em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .accordion {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            cursor: pointer;
+            padding: 20px 25px;
+            width: 100%;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Amiri', serif;
+            transition: all 0.4s ease;
+            margin-top: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .accordion::before {
+            content: '◀';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+            font-size: 14px;
+        }
+        .accordion.active::before {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        .accordion:hover {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border-color: #3498db;
+            transform: translateX(-5px);
+        }
+        .accordion.active {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border-color: #2c3e50;
+        }
+
+        .panel {
+            padding: 30px;
+            display: none;
+            background: linear-gradient(to bottom, #ffffff, #fafbfc);
+            border: 2px solid #3498db;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            line-height: 2;
+            text-align: justify;
+            animation: slideDown 0.4s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .source {
+            color: #e67e22;
+            font-weight: bold;
+            display: block;
+            margin-top: 18px;
+            font-size: 0.92em;
+            border-top: 2px dashed #eee;
+            padding-top: 12px;
+        }
+
+        .highlight { color: #c0392b; font-weight: bold; font-size: 1.05em; }
+
+        .rule-box {
+            border-right: 6px solid #27ae60;
+            background: linear-gradient(to left, #f0fff4, #ffffff);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+            line-height: 2.2;
+            box-shadow: 0 2px 10px rgba(39,174,96,0.1);
+        }
+
+        .mindmap-box {
+            border: 3px dashed #bdc3c7;
+            padding: 25px;
+            background: linear-gradient(135deg, #fdfefe, #f8f9f9);
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.04);
+        }
+        .mindmap-box h3 {
+            color: #065f46;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+        .mindmap-box ul { padding-right: 20px; }
+        .mindmap-box li { margin: 8px 0; line-height: 1.9; }
+
+        /* ===== أنماط الخريطة المفاهيمية ===== */
+        .concept-map {
+            position: relative;
+            padding: 30px 10px;
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+        .map-center {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .map-center .node-main {
+            display: inline-block;
+            background: linear-gradient(135deg, #065f46, #065f46);
+            color: #f39c12;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 3px solid #f39c12;
+        }
+        .map-branches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .branch {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            border-top: 5px solid;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .branch:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .branch-1 { border-color: #e74c3c; }
+        .branch-2 { border-color: #3498db; }
+        .branch-3 { border-color: #27ae60; }
+        .branch-4 { border-color: #f39c12; }
+        .branch-5 { border-color: #9b59b6; }
+        .branch-6 { border-color: #1abc9c; }
+
+        .branch h4 {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eee;
+        }
+        .branch-1 h4 { color: #e74c3c; }
+        .branch-2 h4 { color: #3498db; }
+        .branch-3 h4 { color: #27ae60; }
+        .branch-4 h4 { color: #f39c12; }
+        .branch-5 h4 { color: #9b59b6; }
+        .branch-6 h4 { color: #1abc9c; }
+
+        .branch ul { padding-right: 15px; font-size: 0.95em; }
+        .branch li { margin: 6px 0; line-height: 1.8; }
+
+        .sub-node {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 3px;
+            color: #555;
+        }
+
+        /* connector lines */
+        .connector {
+            text-align: center;
+            font-size: 2em;
+            color: #bdc3c7;
+            margin: 5px 0;
+            line-height: 1;
+        }
+
+        /* ===== أنماط القواعد المرقمة ===== */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .rule-card {
+            border-right: 6px solid;
+            background: white;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+            line-height: 1.9;
+        }
+        .rule-card:hover { transform: translateX(-5px); }
+        .rule-card .rule-num {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 0.95em;
+        }
+        .rule-card:nth-child(1) { border-color: #e74c3c; }
+        .rule-card:nth-child(1) .rule-num { background: #e74c3c; }
+        .rule-card:nth-child(2) { border-color: #3498db; }
+        .rule-card:nth-child(2) .rule-num { background: #3498db; }
+        .rule-card:nth-child(3) { border-color: #27ae60; }
+        .rule-card:nth-child(3) .rule-num { background: #27ae60; }
+        .rule-card:nth-child(4) { border-color: #f39c12; }
+        .rule-card:nth-child(4) .rule-num { background: #f39c12; }
+        .rule-card:nth-child(5) { border-color: #9b59b6; }
+        .rule-card:nth-child(5) .rule-num { background: #9b59b6; }
+        .rule-card:nth-child(6) { border-color: #1abc9c; }
+        .rule-card:nth-child(6) .rule-num { background: #1abc9c; }
+        .rule-card:nth-child(7) { border-color: #e67e22; }
+        .rule-card:nth-child(7) .rule-num { background: #e67e22; }
+        .rule-card:nth-child(8) { border-color: #2c3e50; }
+        .rule-card:nth-child(8) .rule-num { background: #2c3e50; }
+        .rule-card:nth-child(9) { border-color: #c0392b; }
+        .rule-card:nth-child(9) .rule-num { background: #c0392b; }
+        .rule-card:nth-child(10) { border-color: #16a085; }
+        .rule-card:nth-child(10) .rule-num { background: #16a085; }
+
+        .rule-title { font-weight: bold; font-size: 1.05em; color: #2c3e50; }
+        .rule-desc { margin-top: 8px; color: #555; font-size: 0.95em; }
+        .rule-example { margin-top: 8px; padding: 10px; background: #f9f9f9; border-radius: 6px; font-size: 0.9em; color: #666; border-right: 3px solid #ddd; }
+
+        /* ===== أنماط روابط الكتب ===== */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .book-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #eee;
+            transition: all 0.3s;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+        .book-card:hover {
+            border-color: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .book-card h4 { color: #2c3e50; margin-bottom: 8px; }
+        .book-card .author { color: #7f8c8d; font-size: 0.9em; margin-bottom: 10px; }
+        .book-card .desc { color: #555; font-size: 0.9em; line-height: 1.7; margin-bottom: 12px; }
+        .book-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+        .book-card a:hover { background: linear-gradient(135deg, #2980b9, #1a6fa0); }
+
+        .book-card .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            margin-bottom: 10px;
+        }
+        .badge-ar { background: #e8f5e9; color: #27ae60; }
+        .badge-en { background: #e3f2fd; color: #2196f3; }
+        .badge-free { background: #fff3e0; color: #f39c12; }
+
+        /* footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #0c0c0c;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 نقد الاستشراق والرد على الشبهات حول السنة النبوية</h1>
+
+    <!-- ======================================================== -->
+    <!--  1. الخريطة المفاهيمية الجامعة                            -->
+    <!-- ======================================================== -->
+    <div class="section">
+        <h2>🗺️ أولاً: الخريطة المفاهيمية الجامعة</h2>
+
+        <div class="concept-map">
+            <!-- العقدة المركزية -->
+            <div class="map-center">
+                <span class="node-main">⚡ نقد الاستشراق في السنة النبوية</span>
+            </div>
+            <div class="connector">▼</div>
+
+            <!-- الفروع الستة -->
+            <div class="map-branches">
+                <!-- الفرع 1 -->
+                <div class="branch branch-1">
+                    <h4>🔴 الفرع الأول: شبهات حول الرواة</h4>
+                    <ul>
+                        <li><strong>أبو هريرة رضي الله عنه:</strong></li>
+                        <li>
+                            <span class="sub-node">قصر الصحبة</span>
+                            <span class="sub-node">كثرة المرويات</span>
+                            <span class="sub-node">موقف عمر</span>
+                        </li>
+                        <li><strong>الرد:</strong> مرسل الصحابة حجة — دعاء النبي ﷺ له — ملازمة أهل الصفة — توثيق عمر العملي</li>
+                    </ul>
+                </div>
+
+                <!-- الفرع 2 -->
+                <div class="branch branch-2">
+                    <h4>🔵 الفرع الثاني: نقد صحيح البخاري</h4>
+                    <ul>
+                        <li><strong>شاخت:</strong> الأسانيد مختلقة</li>
+                        <li><strong>جولدتسيهر:</strong> السنة انعكاس سياسي</li>
+                        <li>
+                            <span class="sub-node">نظرية الإسقاط الخلفي</span>
+                            <span class="sub-node">نفي التدوين المبكر</span>
+                        </li>
+                        <li><strong>الرد:</strong> البرديات المبكرة — استحالة التواطؤ — أبحاث موتسكي المنصفة</li>
+                    </ul>
+                </div>
+
+                <!-- الفرع 3 -->
+                <div class="branch branch-3">
+                    <h4>🟢 الفرع الثالث: نقد منهج الإسناد</h4>
+                    <ul>
+                        <li><strong>الزعم:</strong> الإسناد اختُرع متأخراً (بعد الفتنة)</li>
+                        <li><strong>الرد:</strong></li>
+                        <li>- آيات قرآنية تأمر بالتثبت: ﴿إن جاءكم فاسق بنبأ﴾</li>
+                        <li>- ممارسة الصحابة للنقد (عمر يطلب البينة)</li>
+                        <li>- صحف مكتوبة قبل الفتنة (صحيفة همام بن منبه)</li>
+                    </ul>
+                </div>
+
+                <!-- الفرع 4 -->
+                <div class="branch branch-4">
+                    <h4>🟡 الفرع الرابع: نقد التدوين</h4>
+                    <ul>
+                        <li><strong>الشبهة:</strong> لم تُكتب السنة إلا بعد 200 سنة</li>
+                        <li><strong>الرد:</strong></li>
+                        <li>- صحيفة عبد الله بن عمرو (الصادقة)</li>
+                        <li>- كتاب علي بن أبي طالب</li>
+                        <li>- رسائل النبي ﷺ للملوك (وثائق مادية)</li>
+                        <li>- تدوين عمر بن عبد العزيز الرسمي (سنة 100هـ)</li>
+                    </ul>
+                </div>
+
+                <!-- الفرع 5 -->
+                <div class="branch branch-5">
+                    <h4>🟣 الفرع الخامس: الدوافع والأهداف</h4>
+                    <ul>
+                        <li><strong>الدوافع الاستشراقية:</strong></li>
+                        <li>- خدمة الاستعمار وتفكيك المرجعية</li>
+                        <li>- إسقاط منهج النقد الكتابي على الإسلام</li>
+                        <li>- التحيز الأيديولوجي المسبق</li>
+                        <li><strong>النتيجة:</strong> استنتاجات مبنية على مقدمات خاطئة</li>
+                    </ul>
+                </div>
+
+                <!-- الفرع 6 -->
+                <div class="branch branch-6">
+                    <h4>🔵 الفرع السادس: أدوات الرد والحماية</h4>
+                    <ul>
+                        <li><strong>الأدوات العلمية:</strong></li>
+                        <li>
+                            <span class="sub-node">القواعد العشر للرد</span>
+                            <span class="sub-node">المصادر الأكاديمية</span>
+                        </li>
+                        <li>
+                            <span class="sub-node">أبحاث المنصفين الغربيين</span>
+                            <span class="sub-node">علم الجرح والتعديل</span>
+                        </li>
+                        <li><strong>المراجع المحورية:</strong> الأعظمي — المعلمي — أبو شهبة — موتسكي</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- الخريطة الذهنية التفصيلية -->
+        <div class="mindmap-box">
+            <h3>📌 خريطة تفصيلية: مسار الشبهة والرد</h3>
+            <ul>
+                <li><strong>المرحلة 1 — التشكيك:</strong> يطرح المستشرق شبهة (مثال: أبو هريرة لم يصحب النبي ﷺ طويلاً)</li>
+                <li><strong>المرحلة 2 — التعميم:</strong> يبني عليها نتيجة عامة (إذن كل مروياته مشكوك فيها)</li>
+                <li><strong>المرحلة 3 — الهدم:</strong> يصل لنتيجة كبرى (إذن السنة كلها غير موثوقة)</li>
+                <li style="color:#27ae60;"><strong>المرحلة 4 — الرد:</strong> تفنيد الجذر → سقوط البناء كاملاً</li>
+            </ul>
+
+            <h3 style="margin-top:20px;">📌 خريطة نقد "أبي هريرة رضي الله عنه":</h3>
+            <ul>
+                <li><strong>جذر الشبهة:</strong> تفتيت الثقة في "المكثرين" لتقويض 60% من الأحكام الفقهية.</li>
+                <li><strong>الأدوات المستخدمة:</strong> (الشك في الذاكرة) + (دعوى الصراع السياسي) + (الطعن في العدالة).</li>
+                <li><strong>خط الدفاع:</strong> القرآن يعدّل الصحابة + دعاء نبوي موثق + شهادة كبار الصحابة له.</li>
+            </ul>
+
+            <h3 style="margin-top:20px;">📌 خريطة نقد "صحيح البخاري":</h3>
+            <ul>
+                <li><strong>المنهج الاستشراقي:</strong> نقد الأسانيد كـ "ستار" لإخفاء المتون الموضوعة (حسب زعمهم).</li>
+                <li><strong>الهدف النهائي:</strong> جعل السنة "تطوراً تاريخياً بشرياً" لا "وحياً إلهياً منقولاً".</li>
+                <li><strong>نقطة الضعف:</strong> تجاهل الأدلة المادية (البرديات + الصحف) التي تثبت التدوين المبكر.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!--  2. التحليل التفصيلي لشبهات أبي هريرة                    -->
+    <!-- ======================================================== -->
+    <div class="section">
+        <h2>📖 ثانياً: التحليل المعمق لشبهات المستشرقين حول أبي هريرة رضي الله عنه</h2>
+
+        <button class="accordion">1. شبهة "الرواية الشاملة" وقصر مدة الصحبة</button>
+        <div class="panel">
+            <p><strong>طرح المستشرقين (جولدتسيهر في كتابه "دراسات محمدية"):</strong> زعم أن أبا هريرة لم يسلم إلا في خيبر (سنة 7هـ)، فكيف يروي ما لم يحضره؟ واتهمه بأنه كان ينسب مرسلاته للنبي مباشرة ليرفع من شأن نفسه.</p>
+            <p><span class="highlight">الرد التفصيلي:</span></p>
+            <p><strong>أولاً — مرسل الصحابي حجة:</strong> ثبت أن الصحابة كان يروي بعضهم عن بعض، وحين يقول الصحابي "قال رسول الله ﷺ" فهو إما سمعه منه مباشرة أو من صحابي آخر ثقة، والصحابة كلهم عدول بنص القرآن: ﴿كُنتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ﴾، وبإجماع أهل السنة.</p>
+            <p><strong>ثانياً — بركة الحفظ:</strong> حديث "بسط الثوب" المشهور في صحيح البخاري (حديث رقم 119)، حيث دعا له النبي ﷺ ألا ينسى شيئاً سمعه، وهو أمر معجز أثبته الواقع التاريخي، إذ لم يُعرف عنه نسيان حديث قط.</p>
+            <p><strong>ثالثاً — الملازمة التامة:</strong> كان أبو هريرة من "أهل الصفة" الذين لا شغل لهم إلا ملازمة النبي ﷺ وسماع حديثه ليل نهار، بينما انشغل كبار الصحابة كأبي بكر وعمر بالتجارة والإدارة. قال أبو هريرة نفسه: "إن إخواني من المهاجرين كان يشغلهم الصفق بالأسواق".</p>
+            <p><strong>رابعاً — التوثيق الكمي:</strong> أثبت الدكتور الأعظمي أن مرويات أبي هريرة بعد حذف المكرر لا تتجاوز 1500 حديث، موزعة على 3 سنوات صحبة = حديث ونصف يومياً تقريباً، وهذا يحفظه أي طالب عادي!</p>
+            <span class="source">📚 المصادر: "الأنوار الكاشفة" للمعلمي اليماني (ص 154-160) | "سير أعلام النبلاء" للذهبي (ج2، ص 594) | "دراسات في الحديث النبوي" للأعظمي (ج1).</span>
+        </div>
+
+        <button class="accordion">2. شبهة "تأديب عمر" لأبي هريرة</button>
+        <div class="panel">
+            <p><strong>طرح المستشرقين (فون فلوتن وسبرنجر):</strong> ادعوا أن عمر بن الخطاب هدد أبا هريرة بالنفي أو ضربه بالدرة بسبب كثرة حديثه، مما يدل — حسب زعمهم — على شك عمر في صدقه أو اتهامه بالوضع.</p>
+            <p><span class="highlight">الرد التفصيلي:</span></p>
+            <p><strong>أولاً — فلسفة عمر العامة:</strong> كان عمر رضي الله عنه يخشى انشغال الناس بالحديث عن حفظ القرآن وفهمه في المرحلة المبكرة من بناء الدولة، فكان يأمر بتقليل الرواية "عموماً" وليس خصوصاً بأبي هريرة. فقد قال لابن مسعود وأُبي بن كعب كلاماً مشابهاً.</p>
+            <p><strong>ثانياً — التوثيق العملي الحاسم:</strong> عمر نفسه وَلَّى أبا هريرة على البحرين! ولو كان يتهمه بالكذب على رسول الله ﷺ لما أمّنه على أموال المسلمين وأعراضهم ودمائهم. هذا دليل قاطع على الثقة.</p>
+            <p><strong>ثالثاً — سياق الرواية:</strong> عمر قال: "لتتركن الحديث أو لألحقنك بأرض دوس"، وهذا من باب السياسة الشرعية للحفاظ على أولوية القرآن، وليس من باب التكذيب. وقد أذن عمر لاحقاً بالرواية بعد استقرار الأمور.</p>
+            <p><strong>رابعاً — شهادة الصحابة له:</strong> وثّقه طلحة والزبير وعائشة وابن عمر رضي الله عنهم أجمعين، ولم يُنقل عن صحابي واحد تكذيبه البتة.</p>
+            <span class="source">📚 المصادر: "دفاع عن السنة" لأبي شهبة (ص 182) | "الإصابة" لابن حجر (ج7، ص 348) | "فتح الباري" لابن حجر (ج1، المقدمة).</span>
+        </div>
+
+        <button class="accordion">3. شبهة "التأثر بالإسرائيليات" (كعب الأحبار)</button>
+        <div class="panel">
+            <p><strong>طرح المستشرقين:</strong> زعم بعض المستشرقين أن أبا هريرة تأثر بروايات كعب الأحبار اليهودية، وأنه خلط بين ما سمعه من النبي ﷺ وما سمعه من كعب.</p>
+            <p><span class="highlight">الرد التفصيلي:</span></p>
+            <p><strong>أولاً:</strong> أبو هريرة نفسه كان يميز بوضوح بين ما يرويه عن النبي ﷺ وما يرويه عن كعب، بل ثبت أنه أنكر على كعب في مواضع عديدة.</p>
+            <p><strong>ثانياً:</strong> علماء الجرح والتعديل فحصوا كل رواية ونسبوها لمصدرها الصحيح، فما كان مرفوعاً فهو مرفوع وما كان موقوفاً فهو موقوف.</p>
+            <p><strong>ثالثاً:</strong> المنهج الاستشراقي هنا يخلط بين "اللقاء" و"التأثر"، وهذا مغالطة منطقية واضحة. فلقاء العالم بعالم آخر لا يعني ذوبانه فيه.</p>
+            <span class="source">📚 المصادر: "الأنوار الكاشفة" للمعلمي (ص 200-215) | "أبو هريرة راوية الإسلام" لعجاج الخطيب.</span>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!--  3. صحيح البخاري                                          -->
+    <!-- ======================================================== -->
+    <div class="section">
+        <h2>📖 ثالثاً: موقف المستشرقين من صحيح البخاري ومنهجه</h2>
+
+        <button class="accordion">1. نظرية شاخت: الأسانيد مختلقة (الإسقاط الخلفي)</button>
+        <div class="panel">
+            <p><strong>الادعاء:</strong> يزعم جوزيف شاخت في كتابه (The Origins of Muhammadan Jurisprudence) أن الأسانيد في البخاري "وهمية" رُكّبت في العصر العباسي لتبرير المذاهب الفقهية، وأن كل جيل كان "يطيل" السند بإضافة راوٍ سابق حتى يصل للنبي ﷺ.</p>
+            <p><span class="highlight">الرد التفصيلي:</span></p>
+            <p><strong>أولاً — الاكتشافات البردية:</strong> أثبتت الباحثة نبيا أبوت (Nabia Abbott) في كتابها "Studies in Arabic Literary Papyri" وجود وثائق حديثية مكتوبة تعود للقرن الأول الهجري، تتطابق نصوصها مع مرويات البخاري، مما يهدم نظرية الاختلاق المتأخر من جذورها.</p>
+            <p><strong>ثانياً — استحالة التواطؤ:</strong> البخاري يروي الحديث الواحد بأسانيد متعددة عن شيوخ في بلدان مختلفة (بخارى، مكة، بغداد، مصر، الشام). فكيف اتفق هؤلاء جميعاً على "تأليف" نفس السند والمتن بحرفيته دون وسائل اتصال سريعة؟ هذا محال عقلاً وعادة.</p>
+            <p><strong>ثالثاً — رد موتسكي:</strong> المستشرق المنصف هارالد موتسكي أثبت في أبحاثه أن نظرية شاخت بها خلل منهجي جسيم، وأن الأسانيد تعكس واقعاً تاريخياً حقيقياً وليست اختراعاً.</p>
+            <span class="source">📚 المصادر: "دراسات في الحديث النبوي" للأعظمي (ج1، ص 250) | Motzki, "The Origins of Islamic Jurisprudence" (2002).</span>
+        </div>
+
+        <button class="accordion">2. شبهة "تسييس" البخاري لاختياراته</button>
+        <div class="panel">
+            <p><strong>الادعاء:</strong> زعم بعض المستشرقين أن البخاري انتقى أحاديث تخدم السلطة العباسية أو اتجاهاً مذهبياً معيناً.</p>
+            <p><span class="highlight">الرد التفصيلي:</span></p>
+            <p><strong>أولاً:</strong> البخاري رفض طلب الأمراء وذوي السلطان، واشتُهر باستقلاليته حتى أُخرج من نيسابور بسبب خلافه مع أميرها في مسألة علمية (مسألة خلق أفعال العباد).</p>
+            <p><strong>ثانياً:</strong> في صحيحه أحاديث تنتقد الظلم والجور وتأمر بالعدل ومحاسبة الحاكم، مثل: "ما من عبد يسترعيه الله رعية يموت يوم يموت وهو غاش لرعيته إلا حرم الله عليه الجنة". فأين التسييس؟</p>
+            <p><strong>ثالثاً:</strong> منهج البخاري في الاختيار كان قائماً على شروط علمية دقيقة (اتصال السند، العدالة، الضبط، عدم الشذوذ، عدم العلة) لا على اعتبارات سياسية.</p>
+            <span class="source">📚 المصادر: "الحدثون والسياسة" لإبراهيم بن صالح العجلان | "الإمام البخاري والسلطة السياسية" لنبيل بن أحمد بلهي.</span>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!--  4. القواعد العشر الكاملة                                  -->
+    <!-- ======================================================== -->
+    <div class="section">
+        <h2>⚖️ رابعاً: القواعد العشر التفصيلية للرد على الاستشراق</h2>
+
+        <div class="rules-grid">
+            <!-- القاعدة 1 -->
+            <div class="rule-card">
+                <span class="rule-num">1</span>
+                <span class="rule-title">قاعدة النقد الداخلي للمنهج</span>
+                <div class="rule-desc">مواجهة المستشرق بتناقضاته الداخلية: يعترف بدقة المسلمين في الأنساب والتواريخ، لكنه ينفي دقتهم في نقل أحاديث نبيهم! وهذا تناقض صريح.</div>
+                <div class="rule-example">📌 مثال: جولدتسيهر يعترف بتطور علم الرجال ثم يتجاهل نتائجه.</div>
+            </div>
+
+            <!-- القاعدة 2 -->
+            <div class="rule-card">
+                <span class="rule-num">2</span>
+                <span class="rule-title">قاعدة تتبع التحول التاريخي</span>
+                <div class="rule-desc">إثبات أن السنة انتقلت في تسلسل طبيعي ومنطقي: من الحفظ الشفهي → إلى الصحف الفردية → إلى التدوين الرسمي المنظم. وكل مرحلة موثقة بأدلة مادية ونصية.</div>
+                <div class="rule-example">📌 مثال: صحيفة همام بن منبه (تلميذ أبي هريرة) تتطابق مع ما في البخاري ومسلم.</div>
+            </div>
+
+            <!-- القاعدة 3 -->
+            <div class="rule-card">
+                <span class="rule-num">3</span>
+                <span class="rule-title">قاعدة بيان عوار الحلقات المفقودة</span>
+                <div class="rule-desc">الرد على دعوى انقطاع السند من خلال "المتابعات والشواهد" التي يجهلها المستشرق، فالحديث الذي يظنه منقطعاً قد يأتي من طرق أخرى متصلة تعضده وتقويه.</div>
+                <div class="rule-example">📌 مثال: أحاديث كثيرة لها 5-10 طرق مستقلة يستحيل تواطؤها.</div>
+            </div>
+
+            <!-- القاعدة 4 -->
+            <div class="rule-card">
+                <span class="rule-num">4</span>
+                <span class="rule-title">قاعدة المقايسة العقلية</span>
+                <div class="rule-desc">هل يُعقل أن أمة أسست حضارة امتدت من الأندلس إلى الصين، بنت تشريعاتها ونظامها الاجتماعي على "أكاذيب مكشوفة" لم يتنبه لها أحد من علمائها على مدى 1400 سنة، ثم يأتي باحث أوروبي ليكتشفها؟!</div>
+                <div class="rule-example">📌 مثال: الحضارة الإسلامية أنتجت آلاف العلماء النقاد — أليسوا أدرى بتراثهم؟</div>
+            </div>
+
+            <!-- القاعدة 5 -->
+            <div class="rule-card">
+                <span class="rule-num">5</span>
+                <span class="rule-title">قاعدة اللغة والسياق الاصطلاحي</span>
+                <div class="rule-desc">تفسير المصطلحات الحديثية (التدليس، الإرسال، الانقطاع) بمعناها الاصطلاحي الدقيق عند المحدثين، لا بمعناها اللغوي العام الذي يوهم بالكذب والخداع. فـ"المدلس" ليس "الكذاب"!</div>
+                <div class="rule-example">📌 مثال: "التدليس" عند المحدثين = إخفاء عيب في السند، وليس = الكذب. وله أنواع ودرجات.</div>
+            </div>
+
+            <!-- القاعدة 6 -->
+            <div class="rule-card">
+                <span class="rule-num">6</span>
+                <span class="rule-title">قاعدة فضح الإسقاط المنهجي</span>
+                <div class="rule-desc">كشف قيام المستشرقين بإسقاط مناهج "النقد الكتابي" (Biblical Criticism) المستخدمة في دراسة العهدين القديم والجديد على الحديث النبوي، رغم الاختلاف الجذري بين طبيعة النصين ومنهج نقلهما.</div>
+                <div class="rule-example">📌 مثال: الأناجيل كُتبت مجهولة المؤلف، بينما كل حديث له سلسلة رواة معروفين بأسمائهم وتواريخهم.</div>
+            </div>
+
+            <!-- القاعدة 7 -->
+            <div class="rule-card">
+                <span class="rule-num">7</span>
+                <span class="rule-title">قاعدة الاستشهاد بالمنصفين منهم</span>
+                <div class="rule-desc">الاحتجاج بأقوال المستشرقين المنصفين أنفسهم الذين اعترفوا بدقة المنهج الإسلامي في نقل الحديث، مما يُضعف موقف المتحاملين ويُثبت أن الإنصاف ممكن لمن أراده.</div>
+                <div class="rule-example">📌 مثال: قال المستشرق مارجليوث: "ليس لدى أي أمة من الأمم شيء يضاهي علم الإسناد عند المسلمين". وقال موتسكي: "نظرية شاخت بها خلل جوهري".</div>
+            </div>
+
+            <!-- القاعدة 8 -->
+            <div class="rule-card">
+                <span class="rule-num">8</span>
+                <span class="rule-title">قاعدة فحص الدوافع الخلفية</span>
+                <div class="rule-desc">دراسة السياق التاريخي والسياسي الذي كتب فيه المستشرق: هل كان مرتبطاً بمؤسسة استعمارية؟ هل كان يخدم أجندة تنصيرية؟ هل كان يعمل تحت ضغط أكاديمي يتطلب نتائج "مثيرة"؟</div>
+                <div class="rule-example">📌 مثال: كثير من الدراسات الاستشراقية المبكرة مولتها حكومات استعمارية لفهم "نقاط ضعف" المجتمعات المسلمة.</div>
+            </div>
+
+            <!-- القاعدة 9 -->
+            <div class="rule-card">
+                <span class="rule-num">9</span>
+                <span class="rule-title">قاعدة الإلزام بالمعيار الموحد</span>
+                <div class="rule-desc">إلزام المستشرق بتطبيق نفس معايير الشك التي يطبقها على السنة على مصادره هو: التاريخ الروماني، الأناجيل، التراث اليوناني. فإن فعل ذلك لم يبقَ له تاريخ يعتمد عليه أصلاً!</div>
+                <div class="rule-example">📌 مثال: أقدم مخطوطة كاملة للإنجيل تعود للقرن الرابع الميلادي (بعد المسيح بـ300 سنة)، فهل يشكك في ذلك بنفس الطريقة؟</div>
+            </div>
+
+            <!-- القاعدة 10 -->
+            <div class="rule-card">
+                <span class="rule-num">10</span>
+                <span class="rule-title">قاعدة البناء الإيجابي (لا الدفاع فقط)</span>
+                <div class="rule-desc">عدم الاكتفاء بالرد الدفاعي، بل تقديم عرض إيجابي شامل لمنهج المحدثين يُبرز عظمته وتفرده: نظام الجرح والتعديل، الرحلة في طلب الحديث، التصنيف المعجمي، الاستقصاء التام — وهو منهج لم تعرفه أي حضارة أخرى بهذا المستوى.</div>
+                <div class="rule-example">📌 مثال: ابن معين رحل آلاف الأميال للتحقق من حديث واحد! هل فعل أي ناقد كتابي شيئاً مماثلاً؟</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!--  5. المكتبة والمصادر (روابط حقيقية)                       -->
+    <!-- ======================================================== -->
+    <div class="section">
+        <h2>📚 خامساً: المكتبة التفصيلية — روابط مباشرة للكتب والأبحاث</h2>
+
+        <h3 style="color:#2c3e50; margin-top:20px;">📗 كتب عربية أساسية:</h3>
+        <div class="books-grid">
+
+            <div class="book-card">
+                <span class="badge badge-ar">عربي</span>
+                <span class="badge badge-free">مجاني</span>
+                <h4>الأنوار الكاشفة</h4>
+                <p class="author">عبد الرحمن المعلمي اليماني</p>
+                <p class="desc">أقوى رد على كتاب "أضواء على السنة" لأبي رية الذي استقى شبهاته من المستشرقين. كتاب محوري لا غنى عنه.</p>
+                <a href="https://app.turath.io/book/339" target="_blank" rel="noopener">📖 اقرأ الكتاب — موقع تراث</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-ar">عربي</span>
+                <span class="badge badge-free">مجاني</span>
+                <h4>دفاع عن السنة ورد شبه المستشرقين</h4>
+                <p class="author">محمد محمد أبو شهبة</p>
+                <p class="desc">دراسة أكاديمية شاملة تفند شبهات المستشرقين حول السنة والرواة بمنهج علمي رصين.</p>
+                <a href="https://app.turath.io/book/37972" target="_blank" rel="noopener">📖 اقرأ الكتاب — موقع تراث</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-ar">عربي</span>
+                <span class="badge badge-free">مجاني</span>
+                <h4>السنة ومكانتها في التشريع الإسلامي</h4>
+                <p class="author">مصطفى السباعي</p>
+                <p class="desc">أطروحة دكتوراه رائدة في الرد على شبهات المستشرقين حول حجية السنة وتدوينها.</p>
+                <a href="https://app.turath.io/book/37638" target="_blank" rel="noopener">📖 اقرأ الكتاب — موقع تراث</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-ar">عربي</span>
+                <span class="badge badge-free">مجاني</span>
+                <h4>دراسات في الحديث النبوي وتاريخ تدوينه</h4>
+                <p class="author">محمد مصطفى الأعظمي</p>
+                <p class="desc">أهم رد أكاديمي على نظرية شاخت، بالأدلة المادية والمخطوطات. حائز على جائزة الملك فيصل العالمية.</p>
+                <a href="https://aljam3.com/ar/19726/42135/1" target="_blank" rel="noopener">📖 موقع الجامع للكتب الإسلامية</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-ar">عربي</span>
+                <span class="badge badge-free">مجاني</span>
+                <h4>أبو هريرة راوية الإسلام</h4>
+                <p class="author">محمد عجاج الخطيب</p>
+                <p class="desc">دراسة علمية متخصصة في الدفاع عن أبي هريرة والرد على كل الشبهات المثارة حوله.</p>
+                <a href="https://app.turath.io/book/96178" target="_blank" rel="noopener">📖 اقرأ الكتاب — موقع تراث</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-ar">عربي</span>
+                <span class="badge badge-free">مجاني</span>
+                <h4>منهج النقد عند المحدثين مقارناً بالمنهج النقدي الغربي</h4>
+                <p class="author">أكرم ضياء العمري</p>
+                <p class="desc">مرجع مفيد لفهم قواعد النقد عند المحدثين، يكشف تفرد المنهج الإسلامي.</p>
+                <a href="http://www.archive.org/download/waq32365/32365.pdf" target="_blank" rel="noopener">📖 اقرأ الكتاب — تحميل من موقع أرشيف</a>
+            </div>
+
+        </div>
+
+        <h3 style="color:#2c3e50; margin-top:30px;">📘 كتب وأبحاث أجنبية (بعضها مترجم):</h3>
+        <div class="books-grid">
+
+            <div class="book-card">
+                <span class="badge badge-en">English</span>
+                <h4>Studies in Early Hadith Literature</h4>
+                <p class="author">M. M. Azami (الأعظمي)</p>
+                <p class="desc">النسخة الإنجليزية لأهم رد أكاديمي على شاخت، نُشر في الجامعات الغربية وأحدث أثراً كبيراً.</p>
+                <a href="https://archive.org/details/StudiesInEarlyHadithLiterature" target="_blank" rel="noopener">📖 Archive.org</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-en">English</span>
+                <h4>The Origins of Islamic Jurisprudence: Meccan Fiqh</h4>
+                <p class="author">Harald Motzki (موتسكي)</p>
+                <p class="desc">مستشرق ألماني منصف أثبت أن نظرية شاخت بها خلل منهجي، وأن الأسانيد تعكس واقعاً تاريخياً حقيقياً.</p>
+                <a href="https://t.me/almaktaba7adeeth/1322"; target="_blank" rel="noopener">📖 Telegram Link</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-en">English</span>
+                <h4>Studies in Arabic Literary Papyri</h4>
+                <p class="author">Nabia Abbott (نبيا أبوت)</p>
+                <p class="desc">دراسة بردية أثبتت وجود نصوص حديثية مكتوبة تعود للقرن الأول الهجري، وهدمت نظرية التدوين المتأخر.</p>
+                <a href="https://archive.org/details/oip76" target="_blank" rel="noopener">📖 Archive.org</a>
+            </div>
+
+            <div class="book-card">
+                <span class="badge badge-ar">مترجم للعربية</span>
+                <h4>الاستشراق — المعرفة، السلطة، الإنشاء</h4>
+                <p class="author">إدوارد سعيد</p>
+                <p class="desc">كتاب محوري في نقد الاستشراق من الداخل، يكشف التحيزات الأيديولوجية والاستعمارية في الدراسات الاستشراقية.</p>
+                <a href="https://archive.org/details/keyland_tutanota_20181024_0533" target="_blank" rel="noopener">📖 Archive.org</a>
+            </div>
+
+        </div>
+
+        <h3 style="color:#2c3e50; margin-top:30px;">🌐 مواقع ومراكز بحثية متخصصة:</h3>
+        <div class="books-grid">
+
+            <div class="book-card">
+                <h4>مركز نماء للبحوث والدراسات</h4>
+                <p class="desc">مركز بحثي متخصص في ترجمة ونقد الدراسات الاستشراقية، يضم ترجمات لأبحاث موتسكي وغيره.</p>
+                <a href="https://nama-center.com" target="_blank" rel="noopener">🌐 زيارة الموقع</a>
+            </div>
+            
+            <div class="book-card">
+                <h4>موقع أرشيف الإنترنت (Archive.org)</h4>
+                <p class="desc">مكتبة رقمية عالمية تضم ملايين الكتب المجانية، بما فيها كتب الحديث والاستشراق بالعربية والإنجليزية.</p>
+                <a href="https://archive.org" target="_blank" rel="noopener">🌐 زيارة الموقع</a>
+            </div>
+
+            <div class="book-card">
+                <h4>موسوعة الحديث — الدرر السنية</h4>
+                <p class="desc">أكبر موسوعة حديثية رقمية للبحث في الأحاديث ودرجاتها وتخريجها، مرجع أساسي للباحثين.</p>
+                <a href="https://dorar.net/hadith" target="_blank" rel="noopener">🌐 زيارة الموقع</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!--  تذييل الصفحة                                              -->
+    <!-- ======================================================== -->
+    <div class="footer">
+        <p>📚 هذه المادة لأغراض علمية بحثية — يُرجى التحقق من المصادر والرجوع للمتخصصين</p>
+        <p>تم الإعداد بعناية لخدمة الباحثين وطلبة العلم | جميع الروابط تم التحقق منها</p>
+    </div>
+
+</div>
+
+<script>
+    // Accordion functionality
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            // Toggle active class
+            this.classList.toggle("active");
+
+            // Toggle panel
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
